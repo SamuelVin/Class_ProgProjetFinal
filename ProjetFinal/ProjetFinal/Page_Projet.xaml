@@ -9,7 +9,51 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="Yellow">
+    <Grid Background="#262626">
+        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
+            <StackPanel Margin="10" Background="#f2f2f2">
+                <Grid>
+                    <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0" Foreground="Black">Projet: 145-47-2022</TextBlock>
+                    <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Projet:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black">Titre: Construction</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Titre:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black">Début: 2022-06-11</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Début:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black">Description: Creuser un trou</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Description:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green">Budget: 9000 $</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Budget:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black">Resources: 2 employé(s)</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Resources:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green">Salaire: 0 $</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Salaire:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Blue">Client: 145</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Client:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black">Statut: en cours</TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Statut:</TextBlock>
+                </Grid>
+            </StackPanel>
 
+        </StackPanel>
     </Grid>
 </Page>

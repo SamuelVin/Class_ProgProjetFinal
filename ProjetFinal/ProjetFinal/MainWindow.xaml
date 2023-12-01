@@ -9,12 +9,11 @@
     mc:Ignorable="d">
 
     <Grid>
-        <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="Beige">
+        <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="#1a1a1a">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader Content="Categorie"/>
-                <NavigationViewItem x:Name="NavBut1" Content="Test1"/>
-                <NavigationViewItem x:Name="NavBut2" Content="Test2"/>
-                <NavigationViewItem x:Name="NavBut3" Content="Test3"/>
+                <NavigationViewItem x:Name="NavBut1" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Projets"/>
+                <NavigationViewItem x:Name="NavBut2" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Clients"/>
+                <NavigationViewItem x:Name="NavBut3" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Employés"/>
             </NavigationView.MenuItems>
             <Frame x:Name="mainFrame" Grid.Row="1" Background="Aqua"/>
         </NavigationView>
