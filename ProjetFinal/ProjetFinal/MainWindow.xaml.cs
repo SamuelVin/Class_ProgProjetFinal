@@ -26,11 +26,25 @@ namespace ProjetFinal
         public MainWindow()
         {
             this.InitializeComponent();
+            mainFrame.Navigate(typeof(Page_Projet));
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private void navView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            myButton.Content = "Clicked";
+            var item = (NavigationViewItem)args.SelectedItem;
+
+            switch (item.Name)
+            {
+                case "NavBut1":
+                    mainFrame.Navigate(typeof(Page_Projet));
+                    break;
+                case "NavBut2":
+                    mainFrame.Navigate(typeof(Page_Client));
+                    break;
+                case "NavBut3":
+                    mainFrame.Navigate(typeof(Page_Employe));
+                    break;
+            }
         }
     }
 }
