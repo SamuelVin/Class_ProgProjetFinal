@@ -18,7 +18,6 @@ namespace ProjetFinal
         String description;
         int budget;
         String nbrEmploye;
-        String employe;
         String totalSal;
         String client;
         String statut;
@@ -33,7 +32,6 @@ namespace ProjetFinal
         this.Description = "";
         this.Budget = 0;
         this.NbrEmploye = "";
-        this.Employe = " ";
         this.TotalSal = "";
         this.Client = "";
         this.Statut = "";
@@ -47,7 +45,6 @@ namespace ProjetFinal
         this.Description = description;
         this.Budget = budget;
         this.NbrEmploye = nbrEmploye;
-        this.Employe = employe;
         this.TotalSal = totalSal;
         this.Client = client;
         this.Statut = statut;
@@ -60,7 +57,6 @@ namespace ProjetFinal
     public string Description { get => description; set => description = value; }
     public int Budget { get => budget; set => budget = value; }
     public string NbrEmploye { get => nbrEmploye; set => nbrEmploye = value; }
-    public string Employe { get => employe; set => employe = value; }
     public string TotalSal { get => totalSal; set => totalSal = value; }
     public string Client{ get => client; set => client= value; }
     public string Statut { get => statut; set => statut = value; }
@@ -69,7 +65,7 @@ namespace ProjetFinal
 
            public override string ToString()
         {
-           return numeroProjet + " " + titre + " " + dateDebut.ToString() + " " + description + " " + budget + " " + nbrEmploye + " " + employe + " " + totalSal + " " + client + " " + statut;
+           return numeroProjet + " " + titre + " " + dateDebut.ToString() + " " + description + " " + budget + " " + nbrEmploye + " " + totalSal + " " + client + " " + statut;
 }
 
 
