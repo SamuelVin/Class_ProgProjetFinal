@@ -14,96 +14,70 @@
             <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
             <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
         </StackPanel>
-        
-        <!--
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
-            <StackPanel Margin="10" Background="#f2f2f2">
-                <Grid>
-                    <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0" Foreground="Black" Text="Projet: {Binding NumeroProjet}"></TextBlock>
-                    <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Projet:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Titre: {Binding Titre}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Titre:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Début: {Binding DateDebut}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Début:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Description: {Binding Description}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Description:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green" Text="Budget: {Binding Budget}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Budget:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Resources: {Binding NbrEmploye}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Resources:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green" Text="Salaire: {Binding TotalSal}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Salaire:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Blue" Text="Client: {Binding Client}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Client:</TextBlock>
-                </Grid>
-                <Grid>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Statut: {Binding Statut}"></TextBlock>
-                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Statut:</TextBlock>
-                </Grid>
+
+
+        <StackPanel HorizontalAlignment="Center" Margin="20">
+
+            <TextBlock x:Name="titre" Text="Création d'un Projet" FontSize="25" Margin="0,0,0,15" FontFamily="algerien" FontWeight="ExtraBold"/>
+
+
+            <!-- Ajout un projet -->
+            <StackPanel x:Name="formProjet" Background="AliceBlue" Margin="20,0,00,0" Padding="15" Visibility="Visible">
+
+                <TextBox x:Name="tbxNumeroProjet " Header="Num Projet:"/>
+                <TextBlock  x:Name="ErreurNumeroProjet" Text="Entrer le Num d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxTitre" Header="Titre d'un projet:"/>
+                <TextBlock  x:Name="ErreurTitre" Text="Entrer le titre d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
+                <TextBlock  x:Name="ErreurCalendar" Text="Entrer une date du "  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxDescription  " Header="Description d'un projet:"/>
+                <TextBlock  x:Name="ErreurDescription" Text="Entrer une description d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxBudget" Header="Budget:"/>
+                <TextBlock  x:Name="ErreurBudget" Text="Entrer un montant"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrEmploye " Header="Nombre d'employé :"/>
+                <TextBlock  x:Name="ErreurNbrEmploye " Text="Entrer le nombre d'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrTotalSal " Header="Salaire total de l'employé :"/>
+                <TextBlock  x:Name="ErreurTotalSal" Text="Entrer le salaire d'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrClient " Header="Client :"/>
+                <TextBlock  x:Name="ErreurClient" Text="Entrer le client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrStatut " Header="Statut du projet :"/>
+                <TextBlock  x:Name="ErreurStatut" Text="Entrer le statut du projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <ComboBox x:Name="liste" HorizontalAlignment="Stretch" Header="Choisissez un employé" Margin="0 5 0 5">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Employe">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Matricule,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind Nom,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Prenom,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind DateNaissance,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind Email,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Adresse ,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind DateEmbauche ,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind TauxHoraire ,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Photo ,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Statut ,Mode=OneWay}"/>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock  x:Name="ErreurEmployé" Text="Veillez choisir une employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
             </StackPanel>
+            <TextBlock x:Name="validation" Text="Ajout de Projet Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
+
         </StackPanel>
-        -->
-        <Button Background="Red">Hello!</Button>
-        <GridView x:Name="lv_Affichage" >
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
-                        <StackPanel Margin="10" Background="#f2f2f2">
-                            <Grid>
-                                <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0" Foreground="Black" Text="{Binding NumeroProjet}"></TextBlock>
-                                <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Projet:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="{Binding Titre}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Titre:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="{Binding DateDebut}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Début:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="{Binding Description}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Description:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green" Text="{Binding Budget}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Budget:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="{Binding NbrEmploye}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Resources:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green" Text="{Binding TotalSal}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Salaire:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Blue" Text="{Binding Client}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Client:</TextBlock>
-                            </Grid>
-                            <Grid>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="{Binding Statut}"></TextBlock>
-                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Statut:</TextBlock>
-                            </Grid>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </GridView.ItemTemplate>
-        </GridView>
+
 
 
 
