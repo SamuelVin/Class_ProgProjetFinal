@@ -57,7 +57,7 @@
             </StackPanel>
         </StackPanel>
         -->
-        
+
         <GridView x:Name="lv_Affichage">
             <GridView.ItemTemplate>
                 <DataTemplate>
@@ -104,8 +104,5 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-
-
-
     </Grid>
 </Page>
