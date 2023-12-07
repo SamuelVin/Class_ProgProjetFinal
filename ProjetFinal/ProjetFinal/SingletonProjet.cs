@@ -39,19 +39,18 @@ namespace ProjetFinal
                 commande.CommandText = "Select * from projet";
 
                 con.Open();
-
                 MySqlDataReader r = commande.ExecuteReader();
 
                 while (r.Read())
                 {        
                     string numeroProjet = (string)r["numero_projet"];
                     string titre = (string)r["titre"];
-                    DateTime dateDebut = (DateTime)r["date_debut"];
+                    string dateDebut = (string)r["date_debut"];
                     string description = (string)r["description"];
                     int budget = (int)r["budget"];
-                    string nbrEmploye = (string)r["nbr_employe"];
-                    string totalSal = (string)r["total_salaire"];
-                    string client = (string)r["client"];
+                    int nbrEmploye = (int)r["nbr_employe"];
+                    double totalSal = (double)r["total_salaire"];
+                    int client = (int)r["client"];
                     string statut = (string)r["statut"];
 
                     Projet objProjet = new Projet { NumeroProjet = numeroProjet, Titre = titre, DateDebut = dateDebut, Description = description, Budget = budget, NbrEmploye = nbrEmploye, TotalSal = totalSal, Client = client, Statut = statut};
@@ -70,7 +69,6 @@ namespace ProjetFinal
             }
             return listeProjet;
         }
-
 
     }
 }

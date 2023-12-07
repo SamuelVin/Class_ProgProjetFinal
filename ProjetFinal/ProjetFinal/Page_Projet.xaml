@@ -10,7 +10,102 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="#262626">
+        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
+        </StackPanel>
         
+        <!--
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
+            <StackPanel Margin="10" Background="#f2f2f2">
+                <Grid>
+                    <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0" Foreground="Black" Text="Projet: {Binding NumeroProjet}"></TextBlock>
+                    <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Projet:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Titre: {Binding Titre}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Titre:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Début: {Binding DateDebut}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Début:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Description: {Binding Description}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Description:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green" Text="Budget: {Binding Budget}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Budget:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Resources: {Binding NbrEmploye}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Resources:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Green" Text="Salaire: {Binding TotalSal}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Salaire:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Blue" Text="Client: {Binding Client}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Client:</TextBlock>
+                </Grid>
+                <Grid>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0" Foreground="Black" Text="Statut: {Binding Statut}"></TextBlock>
+                    <TextBlock FontWeight="Bold" Margin="5,0,0,0">Statut:</TextBlock>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+        -->
+        
+        <GridView x:Name="lv_Affichage">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
+                        <StackPanel Margin="10" Background="#f2f2f2">
+                            <Grid>
+                                <TextBlock FontWeight="Bold" FontSize="18" Margin="65,0,0,0" Foreground="Black" Text="{Binding NumeroProjet}"></TextBlock>
+                                <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Projet:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="45,0,0,0" Foreground="Black" Text="{Binding Titre}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Titre:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="55,0,0,0" Foreground="Black" Text="{Binding DateDebut}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Début:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="90,0,0,0" Foreground="Black" Text="{Binding Description}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Description:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="60,0,0,0" Foreground="Green" Text="{Binding Budget}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Budget:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="80,0,0,0" Foreground="Black" Text="{Binding NbrEmploye}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Resources:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="58,0,0,0" Foreground="Green" Text="{Binding TotalSal}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Salaire:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="50,0,0,0" Foreground="Blue" Text="{Binding Client}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Client:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="53,0,0,0" Foreground="Black" Text="{Binding Statut}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Statut:</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+
 
     </Grid>
 </Page>
