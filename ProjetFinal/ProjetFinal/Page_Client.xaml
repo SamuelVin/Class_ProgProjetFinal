@@ -11,5 +11,59 @@
 
     <Grid Background="LightGreen">
 
+
+        <StackPanel HorizontalAlignment="Center" Margin="20">
+
+        <TextBlock x:Name="titre" Text="Création  d'un client" FontSize="25" Margin="0,0,0,15" FontFamily="algerien" FontWeight="ExtraBold"/>
+
+
+        <!-- Ajout un Client -->
+        <StackPanel x:Name="formClient" Background="AliceBlue" Margin="20,0,00,0" Padding="15" Visibility="Visible">
+
+                <TextBox x:Name="tbxIdClient" Header="id du Client:"/>
+                <TextBlock  x:Name="ErreurIdClient" Text="Entrer l'id du Client "  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNom" Header="Nom:"/>
+                <TextBlock  x:Name="ErreurNom" Text="Entrer le nom du client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxEmail" Header="Email:"/>
+                <TextBlock  x:Name="ErreurEmail" Text="Entrer l'email du client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxAdresse" Header="Adresse:"/>
+                <TextBlock  x:Name="ErreurAdresse" Text="Entrer l'adresse du client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxTelephone" Header="Telephone:"/>
+                <TextBlock  x:Name="ErreurTelephone" Text="Entrer le numéro de téléphone du client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+ 
+
+            <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
+        </StackPanel>
+        <TextBlock x:Name="validation" Text="Ajout d'un client Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </Grid>
 </Page>

@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,5 +28,69 @@ namespace ProjetFinal
         {
             this.InitializeComponent();
         }
+
+
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            int valide = 0;
+
+            if (tbxIdClient.Text.Trim() == "")
+            {
+
+
+                ErreurIdClient.Visibility = Visibility.Visible;
+                valide += 1;
+
+            }
+            if (tbxNom.Text.Trim() == "")
+            {
+
+
+                ErreurNom.Visibility = Visibility.Visible;
+                valide += 1;
+
+            }
+
+            if (tbxEmail.Text.Trim() == "")
+            {
+
+
+                ErreurEmail.Visibility = Visibility.Visible;
+                valide += 1;
+
+            }
+
+
+            if (tbxAdresse.Text.Trim() == "")
+            {
+
+
+                ErreurAdresse.Visibility = Visibility.Visible;
+                valide += 1;
+
+            }
+
+            if (tbxTelephone.Text.Trim() == "")
+            {
+
+
+                ErreurTelephone.Visibility = Visibility.Visible;
+                valide += 1;
+
+            }
+
+
+            if (valide == 0)
+            {
+                SingletonClient.getInstance().AjouterEmployer(tbxIdClient.Text, tbxNom.Text, tbxEmail.Text, tbxAdresse.Text, tbxTelephone.Text);
+                formClient.Visibility = Visibility.Collapsed;
+                validation.Visibility = Visibility.Visible;
+            }
+
+
+
+        }
+
     }
 }
