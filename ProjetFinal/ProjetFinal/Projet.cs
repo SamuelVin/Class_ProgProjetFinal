@@ -14,12 +14,12 @@ namespace ProjetFinal
 
         String numeroProjet;
         String titre;
-        DateTime dateDebut;
+        String dateDebut;
         String description;
         int budget;
-        String nbrEmploye;
-        String totalSal;
-        String client;
+        int nbrEmploye;
+        Double totalSal;
+        int client;
         String statut;
 
     
@@ -28,20 +28,20 @@ namespace ProjetFinal
     {
         this.NumeroProjet= "";
         this.Titre = "";
-        this.DateDebut = new DateTime();
+        this.DateDebut = "";
         this.Description = "";
         this.Budget = 0;
-        this.NbrEmploye = "";
-        this.TotalSal = "";
-        this.Client = "";
+        this.NbrEmploye = 0;
+        this.TotalSal = 0;
+        this.Client = 0;
         this.Statut = "";
     }
 
-    public Projet(string numeroProjet, string titre, int _adebut, int _moisdebut, int _jourdebut, string description, int budget, string nbrEmploye, string employe, string totalSal, string client, string statut)
+    public Projet(string numeroProjet, string titre, string _dateDebut, string _description, int budget, int nbrEmploye, string employe, double totalSal, int client, string statut)
     {
         this.NumeroProjet = numeroProjet;
         this.Titre = titre;
-        this.DateDebut = new DateTime(_adebut, _moisdebut, _jourdebut);
+        this.DateDebut = DateDebut;
         this.Description = description;
         this.Budget = budget;
         this.NbrEmploye = nbrEmploye;
@@ -53,12 +53,12 @@ namespace ProjetFinal
 
     public string NumeroProjet { get => numeroProjet; set => numeroProjet = value; }
     public string Titre { get => titre; set => titre = value; }
-    public DateTime DateDebut { get => dateDebut; set => dateDebut = value; }
+    public string DateDebut { get => dateDebut; set => dateDebut = value; }
     public string Description { get => description; set => description = value; }
     public int Budget { get => budget; set => budget = value; }
-    public string NbrEmploye { get => nbrEmploye; set => nbrEmploye = value; }
-    public string TotalSal { get => totalSal; set => totalSal = value; }
-    public string Client{ get => client; set => client= value; }
+    public int NbrEmploye { get => nbrEmploye; set => nbrEmploye = value; }
+    public double TotalSal { get => totalSal; set => totalSal = value; }
+    public int Client{ get => client; set => client= value; }
     public string Statut { get => statut; set => statut = value; }
 
 

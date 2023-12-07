@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ProjetFinal.AjoutProjet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetFinal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid  Background="#262626" >
+
+        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
+        </StackPanel>
+
+
+        <StackPanel HorizontalAlignment="Center" Margin="20">
+
+            <TextBlock x:Name="titre" Text="Création d'un Projet" FontSize="25" Margin="0,0,0,15" FontFamily="algerien" FontWeight="ExtraBold"/>
+
+
+            <!--Ajout un projet-->
+            <StackPanel x:Name="formProjet" Background="AliceBlue" Margin="20,0,00,0" Padding="15" Visibility="Visible">
+
+                <TextBox x:Name="tbxNumeroProjet " Header="Num Projet:"/>
+                <TextBlock  x:Name="ErreurNumeroProjet" Text="Entrer le Num d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxTitre" Header="Titre d'un projet:"/>
+                <TextBlock  x:Name="ErreurTitre" Text="Entrer le titre d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
+                <TextBlock  x:Name="ErreurCalendar" Text="Entrer une date du "  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxDescription  " Header="Description d'un projet:"/>
+                <TextBlock  x:Name="ErreurDescription" Text="Entrer une description d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxBudget" Header="Budget:"/>
+                <TextBlock  x:Name="ErreurBudget" Text="Entrer un montant"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrEmploye " Header="Nombre d'employé :"/>
+                <TextBlock  x:Name="ErreurNbrEmploye " Text="Entrer le nombre d'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrTotalSal " Header="Salaire total de l'employé :"/>
+                <TextBlock  x:Name="ErreurTotalSal" Text="Entrer le salaire d'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrClient " Header="Client :"/>
+                <TextBlock  x:Name="ErreurClient" Text="Entrer le client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <TextBox x:Name="tbxNbrStatut " Header="Statut du projet :"/>
+                <TextBlock  x:Name="ErreurStatut" Text="Entrer le statut du projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <ComboBox x:Name="liste" HorizontalAlignment="Stretch" Header="Choisissez un employé" Margin="0 5 0 5">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Employe">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Matricule,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind Nom,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Prenom,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind DateNaissance,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind Email,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Adresse ,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind DateEmbauche ,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind TauxHoraire ,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Photo ,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Statut ,Mode=OneWay}"/>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock  x:Name="ErreurEmployé" Text="Veillez choisir une employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
+
+                <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="validation" Text="Ajout de Projet Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Page>
