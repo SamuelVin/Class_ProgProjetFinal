@@ -33,6 +33,7 @@ namespace ProjetFinal
             resetErreurs();
             bool valide = true;
 
+            /*
             if (SingletonClient.getInstance().isIdClienValide(tbxIdClient.Text) == false)
             {
                 tblErreurIdClient.Text = "Veuillez entrer l'id du client";
@@ -89,6 +90,7 @@ namespace ProjetFinal
                 ContentDialogResult resultat = await dialog.ShowAsync();
 
             }
+            */
         }
         private void resetErreurs()
         {

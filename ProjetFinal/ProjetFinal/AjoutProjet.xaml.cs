@@ -36,6 +36,7 @@ namespace ProjetFinal
             resetErreurs();
             bool valide = true;
 
+            /*
             if (SingletonProjet.getInstance().isNumeroProjetValide(tbxNumeroProjet.Text) == false)
             {
                 tblErreurNumeroProjet.Text = "Veuillez entrer le numero  du projet";
@@ -131,6 +132,7 @@ namespace ProjetFinal
                 this.Frame.Navigate(typeof(Page_Projet));
 
             }
+            */
         }
         private void resetErreurs()
         {

@@ -33,6 +33,7 @@ namespace ProjetFinal
             resetErreurs();
             bool valide = true;
 
+            /*
             if (SingletonEmploye.getInstance().isMatriculeValide(tbxMatricule.Text) == false)
             {
                 tblErreurMatricule.Text = "Veuillez entrer le matricule de l'employé";
@@ -136,6 +137,7 @@ namespace ProjetFinal
                 ContentDialogResult resultat = await dialog.ShowAsync();
 
             }
+            */
         }
         private void resetErreurs()
         {
