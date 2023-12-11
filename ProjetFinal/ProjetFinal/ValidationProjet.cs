@@ -9,8 +9,6 @@ namespace ProjetFinal
     internal class ValidationProjet
     {
 
-
-
         static ValidationProjet instance;
         public ValidationProjet() { }
 
@@ -54,43 +52,80 @@ namespace ProjetFinal
                 return false;
         }
 
-        public bool isBudgetValide(int index)
+        public bool isBudgetValide(string index)
+
         {
-            if (index >= 0)
-                return true;
-            else
+            try
+            {   
+              double nbr=  Convert.ToDouble(index);
+                
+                if (nbr>= 0)
+                    return true;
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
                 return false;
+            }
+            
+        }
+
+        public bool isNbrEmployeValide(string index)
+        {
+
+            try
+            {
+
+                double nbr1= Convert.ToDouble(index);
+                if (nbr1 >= 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
 
 
-
-
-        public bool isNbrEmployeValide(int index)
+        public bool isTotalSalValide(string index)
         {
-            if (index >= 0)
-                return true;
-            else
+
+            try
+            {
+
+                double nbr2 = Convert.ToDouble(index);
+                if (nbr2 >= 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
                 return false;
+            }
         }
 
-
-
-        public bool isTotalSalValide(int index)
+        public bool isClientValide(string index)
         {
-            if (index >= 0)
-                return true;
-            else
+
+            try
+            {
+
+                double nbr3 = Convert.ToDouble(index);
+                if (nbr3 >= 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
                 return false;
-        }
-
-
-
-        public bool isClientValide(int index)
-        {
-            if (index >= 0)
-                return true;
-            else
-                return false;
+            }
         }
 
 

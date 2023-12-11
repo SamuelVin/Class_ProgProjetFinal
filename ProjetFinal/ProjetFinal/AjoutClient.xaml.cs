@@ -33,36 +33,36 @@ namespace ProjetFinal
             resetErreurs();
             bool valide = true;
 
-            /*
-            if (SingletonClient.getInstance().isIdClienValide(tbxIdClient.Text) == false)
+
+            if (ValidationClient.getInstance().isIdClientValide(tbxIdClient.Text)== false)
             {
                 tblErreurIdClient.Text = "Veuillez entrer l'id du client";
                 valide = false;
             }
 
 
-            if (SingletonClient.getInstance().isNomValide(tbxNom.Text) == false)
+            if (ValidationClient.getInstance().isNomValide(tbxNom.Text) == false)
             {
                 tblErreurNom.Text = "Veuillez entrer le nom du client";
                 valide = false;
             }
 
 
-            if (SingletonClient.getInstance().isEmailValide(tbxEmail.Text) == false)
+            if (ValidationClient.getInstance().isEmailValide(tbxEmail.Text) == false)
             {
                 tblErreurEmail.Text = "Veuillez entrer l'Email du client";
                 valide = false;
             }
 
 
-            if (SingletonClient.getInstance().isAdresseValide(tbxAdresse.Text) == false)
+            if (ValidationClient.getInstance().isAdresseValide(tbxAdresse.Text) == false)
             {
                 tblErreurAdresse.Text = "Veuillez entrer l'Adresse du client";
                 valide = false;
             }
 
 
-            if (SingletonClient.getInstance().isTelephoneValide(tbxTelephone.Text) == false)
+            if (ValidationClient.getInstance().isTelephoneValide(tbxTelephone.Text) == false)
             {
                 tblErreurTelephone.Text = "Veuillez entrer l'id du client";
                 valide = false;
@@ -72,11 +72,11 @@ namespace ProjetFinal
             {
                 Client client = new Client
                 {
-                    IdClient = int.Parse (tbxIdClient.Text),
+                    IdClient = int.Parse(tbxIdClient.Text) ,
                     Nom = tbxNom.Text,
                     Email = tbxEmail.Text,
-                    Adresse= tbxAdresse.Text,
-                    Telephone = tbxTelephone.Text, 
+                    Adresse = tbxAdresse.Text,
+                    Telephone = tbxTelephone.Text,
                 };
 
                 SingletonClient.getInstance().ajouter(client);
@@ -90,7 +90,7 @@ namespace ProjetFinal
                 ContentDialogResult resultat = await dialog.ShowAsync();
 
             }
-            */
+
         }
         private void resetErreurs()
         {
