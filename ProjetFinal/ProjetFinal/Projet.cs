@@ -37,17 +37,17 @@ namespace ProjetFinal
             this.Statut = "";
         }
 
-        public Projet(string numeroProjet, string titre, string dateDebut, string description, int budget, int nbrEmploye, double totalSal, int client, string statut)
+        public Projet(string _numeroProjet, string _titre, string _dateDebut, string _description, int _budget, int _nbrEmploye, double _totalSal, int _client, string _statut)
         {
-            this.NumeroProjet = numeroProjet;
-            this.Titre = titre;
-            this.DateDebut = dateDebut;
-            this.Description = description;
-            this.Budget = budget;
-            this.NbrEmploye = nbrEmploye;
-            this.TotalSal = totalSal;
-            this.Client = client;
-            this.Statut = statut;
+            this.NumeroProjet = _numeroProjet;
+            this.Titre = _titre;
+            this.DateDebut = _dateDebut;
+            this.Description = _description;
+            this.Budget = _budget;
+            this.NbrEmploye = _nbrEmploye;
+            this.TotalSal = _totalSal;
+            this.Client = _client;
+            this.Statut = _statut;
         }
 
 

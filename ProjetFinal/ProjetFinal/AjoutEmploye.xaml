@@ -9,82 +9,94 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="Crimson">
 
-        <StackPanel  HorizontalAlignment="Center" Margin="20">
 
-            <TextBlock x:Name="titre" Text="Création d'un Employé" FontSize="25" Margin="0,0,0,15"/>
+    <ScrollViewer>
 
+        <Grid Background="Crimson">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Text="Ajout d'un employé" Margin="15" FontSize="40" FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold" HorizontalAlignment="Center"/>
 
             <!-- Ajoute Employe -->
-            <StackPanel x:Name="formEmployé1" Background="AliceBlue" Margin="80,0,0,0" Visibility="Visible">
 
-                <TextBox x:Name="tbxMatriculeEmployé" Header="Matricule  Employé:"/>
-                <TextBlock  x:Name="ErreurMatricule" Text="Entrer le matricule d'un Employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxNomEmployé" Header="Nom Employé:"/>
-                <TextBlock  x:Name="ErreurEmployé" Text="Entrer le nom d'un Employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxPrenomEmployé" Header="Prénom de L'Employé:"/>
-                <TextBlock  x:Name="ErreurPrenom" Text="Entrer le prenom d'un Employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxDateNaissance" Header="DateNaissance:"/>
-                <TextBlock  x:Name="ErreurDateNaissance" Text="Entrer la Date de naissance de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxEmail" Header="Email:"/>
-                <TextBlock  x:Name="ErreurEmail" Text="Entrer l'email de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxAdresse" Header="Adresse:"/>
-                <TextBlock  x:Name="ErreurAdresse" Text="Entrer l'adresse de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxDateEmbauche" Header="DateEmbauche:"/>
-                <TextBlock  x:Name="ErreurDateEmbauche" Text="Entrer la date d'embauche de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxTauxHoraire" Header="TauxHoraire:"/>
-                <TextBlock  x:Name="ErreurTauxHoraire" Text="Entrer le Taux horaire de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxPhoto" Header="Photo:"/>
-                <TextBlock  x:Name="ErreurPhoto" Text="Entrer la photo de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxStatut" Header="Statut:"/>
-                <TextBlock  x:Name="ErreurStatut" Text="Entrer le statut de L'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <Button x:Name="btn" Content="Ajouter un employé" Background="IndianRed" Click="btn_Click"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
+                <TextBox x:Name="tbxMatricule"  Header="Matricule de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurMatricule" Foreground="Red" FontSize="15" />
             </StackPanel>
-            <TextBlock x:Name="validation2" Text="Ajout d'un employé Réussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
 
-        </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Padding="20">
+                <TextBox x:Name="tbxNom"  Header="Nom de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurNom" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
-
-
-
-
-
-
-
-
+            <StackPanel Grid.Row="3" Grid.Column="3" Padding="20">
+                <TextBox x:Name="tbxPrenom"  Header="Prenom de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurPrenom" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
 
+            <StackPanel Grid.Row="4" Grid.Column="4" Padding="20">
+                <TextBox x:Name="tbxDateNaissance"  Header="Date de naissance de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurDateNaissance" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
 
+            <StackPanel Grid.Row="5" Grid.Column="5" Padding="20">
+                <TextBox x:Name="tbxEmail"  Header="Email de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurEmail" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
 
+            <StackPanel Grid.Row="6" Grid.Column="6" Padding="20">
+                <TextBox x:Name="tbxAdresse"  Header="Adresse de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurAdresse" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
 
+            <StackPanel Grid.Row="7" Grid.Column="7" Padding="20">
+                <TextBox x:Name="tbxDateEmbauche"  Header="la date d'embauche de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurDateEmbauche" Foreground="Red" FontSize="15" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Grid.Column="8" Padding="20">
+                <TextBox x:Name="tbxTauxHoraire"  Header="le taux horaire de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurTauxHoraire" Foreground="Red" FontSize="15" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Grid.Column="9" Padding="20">
+                <TextBox x:Name="tbxPhoto"  Header="la photo de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurPhoto" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
 
+            <StackPanel Grid.Row="10" Grid.Column="10" Padding="20">
+                <TextBox x:Name="tbxStatut"  Header="le statut de l'employé" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tblErreurStatut" Foreground="Red" FontSize="15" />
+            </StackPanel>
 
 
+            <Button x:Name="btAjouter" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btAjouter_Click">
+                <TextBlock Foreground="DarkGreen">Ajouter l'employé </TextBlock>
+            </Button>
 
 
+        </Grid>
 
-
-
-
-
-
-
-
-
-    </Grid>
+    </ScrollViewer>
 </Page>

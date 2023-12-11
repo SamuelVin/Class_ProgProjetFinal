@@ -28,160 +28,129 @@ namespace ProjetFinal
         public AjoutProjet()
         {
             this.InitializeComponent();
-            calendar.MaxDate = new DateTimeOffset(new DateTime(2023, 12, 1));
-            calendar.MinDate = new DateTimeOffset(new DateTime(2022, 12, 1));
+            
 
         }
-
-
-        private void btnvalider_Click(object sender, RoutedEventArgs e)
+        private async void btAjouter_Click(object sender, RoutedEventArgs e)
         {
+            resetErreurs();
+            bool valide = true;
 
-            Double Budget = 0;
-            DateTime d = new DateTime();
-            int valide = 0;
-
-            if (tbxNumeroProjet.Text.Trim() == "")
+            if (SingletonProjet.getInstance().isNumeroProjetValide(tbxNumeroProjet.Text) == false)
             {
-
-
-                ErreurNumeroProjet.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxTitre.Text.Trim() == "")
-            {
-
-
-                ErreurTitre.Visibility = Visibility.Visible;
-                valide += 1;
-
+                tblErreurNumeroProjet.Text = "Veuillez entrer le numero  du projet";
+                valide = false;
             }
 
 
-            if (tbxDescription.Text.Trim() == "")
+            if (SingletonProjet.getInstance().isTitreValide(tbxTitre.Text) == false)
             {
-
-
-                ErreurDescription.Visibility = Visibility.Visible;
-                valide += 1;
-
+                tblErreurTitre.Text = "Veuillez entrer le titre  du projet";
+                valide = false;
             }
 
-
-            if (tbxBudget.Text.Trim() == null)
+            if (SingletonProjet.getInstance().isDateDebutValide(tbxDateDebut.Text) == false)
             {
-
-
-                ErreurBudget.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-
-            if (tbxNbrEmploye.Text.Trim() == "")
-            {
-
-
-                ErreurNbrEmploye.Visibility = Visibility.Visible;
-                valide += 1;
+                tblErreurDateDebut.Text = "Veuillez entrer la date de debut  du projet";
+                valide = false;
             }
 
 
 
-            if (tbxNbrTotalSal.Text.Trim() == "")
+            if (SingletonProjet.getInstance().isDescriptionValide(tbxDescription.Text) == false)
             {
-
-
-                ErreurNbrTotalSal.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxNbrClient.Text.Trim() == "")
-            {
-
-
-                ErreurNbrClient.Visibility = Visibility.Visible;
-                valide += 1;
-
+                tblErreurDescription.Text = "Veuillez entrer le numero  du projet";
+                valide = false;
             }
 
 
-            if (tbxNbrStatut.Text.Trim() == "")
+
+            if (SingletonProjet.getInstance().isBudgetValide(tbxBudget.Text) == false)
             {
+                tblErreurBudget.Text = "Veuillez entrer le budget du projet";
+                valide = false;
+            }
 
-
-                ErreurNbrStatut.Visibility = Visibility.Visible;
-                valide += 1;
-
+            if (SingletonProjet.getInstance().isNbrEmployeValide(tbxNbrEmploye.Text) == false)
+            {
+                tblErreurNbrEmploye.Text = "Veuillez entrer le nombre d'employé sur un projet";
+                valide = false;
             }
 
 
-            if (liste.Text.Trim() == "")
+
+            if (SingletonProjet.getInstance().isTotalSalValide(tbxTotalSal.Text) == false)
             {
-                ErreurEmployé.Visibility = Visibility.Visible;
+                tblErreurTotalSal.Text = "Veuillez entrer le salaire total d'un employé ";
+                valide = false;
             }
 
-            try
+
+            if (SingletonProjet.getInstance().isClientValide(tbxClient.Text) == false)
             {
-                budget = Double.Parse(tbxBudget.Text);
-                if (budget < 10000 || budget > 100000)
+                tblErreurClient.Text = "Veuillez entrer le client du projet";
+                valide = false;
+            }
+
+
+            if (SingletonProjet.getInstance().isStatutValide(tbxStatut.Text) == false)
+            {
+                tblErreurStatut.Text = "Veuillez entrer le Statut du projet";
+                valide = false;
+            }
+
+
+            if (valide == true)
+            {
+                Projet projet = new Projet
                 {
-                    tbxBudget.Visibility = Visibility.Visible;
-                }
+
+                    NumeroProjet=tbxNumeroProjet.Text,
+                    Titre=tbxTitre.Text,
+                    DateDebut=tbxDateDebut.Text,
+                    Description=tbxDescription.Text,
+                    Budget=  int.Parse(tbxBudget.Text),
+                    NbrEmploye= int.Parse(tbxNbrEmploye.Text),
+                    TotalSal= double.Parse(tbxTotalSal.Text),
+                    Client= int.Parse(tbxClient.Text),
+                    Statut=tbxStatut.Text,
+                    
+                    
+                };
+
+                SingletonProjet.getInstance().ajouter(projet);
+
+                ContentDialog dialog = new ContentDialog();
+                dialog.Title = "Ajout d'un projet";
+                dialog.PrimaryButtonText = "OK";
+                dialog.DefaultButton = ContentDialogButton.Primary;
+                dialog.Content = "Le projet a été ajouté avec succès";
+
+                ContentDialogResult resultat = await dialog.ShowAsync();
+
+                this.Frame.Navigate(typeof(Page_Projet));
+
             }
-            catch (Exception ex)
-            {
-                ErreurBudget.Visibility = Visibility.Visible;
-                valide++;
-            }
-
-
-            try
-            {
-                d = calendar.Date.Value.Date;
-            }
-            catch (InvalidOperationException ex)
-            {
-                ErreurCalendar.Visibility = Visibility.Visible;
-                valide += 1;
-            }
-
-
-            if (valide == 0)
-            {
-                Employe emp = liste.SelectedItem as Employe;
-
-                SingletonProjet.getInstance().AjouterProjet(tbxDescription.Text, tbxTitre.Text, tbxDescription.Text, budget, tbxNbrEmploye.Text, tbxNbrTotalSal.Text, tbxNbrClient.Text, tbxNbrStatut.Text, tbxNbrStatut.Text, d, emp.Matricule);
-                formProjet.Visibility = Visibility.Collapsed;
-                validation.Visibility = Visibility.Visible;
-            }
-
-
-
+        }
+        private void resetErreurs()
+        {
+            tblErreurNumeroProjet.Text = string.Empty;
+            tblErreurTitre.Text = string.Empty;
+            tblErreurDateDebut.Text = string.Empty;
+            tblErreurDescription.Text = string.Empty;
+            tblErreurBudget.Text = string.Empty;
+            tblErreurNbrEmploye.Text = string.Empty;
+            tblErreurTotalSal.Text = string.Empty;
+            tblErreurClient.Text = string.Empty;
+            tblErreurStatut.Text = string.Empty;
         }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-    }
+
+
+
+
+}
+    

@@ -9,77 +9,95 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid  Background="#262626" >
+
+
+
+    <ScrollViewer>
+        <Grid  Background="#262626" >
 
         <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
             <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
             <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
         </StackPanel>
 
+            <Grid Padding="40" x:Name="mainGrid" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
 
-        <StackPanel HorizontalAlignment="Center" Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="titre" Text="Création d'un Projet" FontSize="25" Margin="0,0,0,15" FontFamily="algerien" FontWeight="ExtraBold"/>
-
-
-            <!--Ajout un projet-->
-            <StackPanel x:Name="formProjet" Background="AliceBlue" Margin="20,0,00,0" Padding="15" Visibility="Visible">
-
-                <TextBox x:Name="tbxNumeroProjet " Header="Num Projet:"/>
-                <TextBlock  x:Name="ErreurNumeroProjet" Text="Entrer le Num d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxTitre" Header="Titre d'un projet:"/>
-                <TextBlock  x:Name="ErreurTitre" Text="Entrer le titre d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
-                <TextBlock  x:Name="ErreurCalendar" Text="Entrer une date du "  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxDescription  " Header="Description d'un projet:"/>
-                <TextBlock  x:Name="ErreurDescription" Text="Entrer une description d'un projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxBudget" Header="Budget:"/>
-                <TextBlock  x:Name="ErreurBudget" Text="Entrer un montant"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxNbrEmploye " Header="Nombre d'employé :"/>
-                <TextBlock  x:Name="ErreurNbrEmploye " Text="Entrer le nombre d'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxNbrTotalSal " Header="Salaire total de l'employé :"/>
-                <TextBlock  x:Name="ErreurTotalSal" Text="Entrer le salaire d'employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxNbrClient " Header="Client :"/>
-                <TextBlock  x:Name="ErreurClient" Text="Entrer le client"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <TextBox x:Name="tbxNbrStatut " Header="Statut du projet :"/>
-                <TextBlock  x:Name="ErreurStatut" Text="Entrer le statut du projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <ComboBox x:Name="liste" HorizontalAlignment="Stretch" Header="Choisissez un employé" Margin="0 5 0 5">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate x:DataType="local:Employe">
-                            <StackPanel>
-                                <TextBlock Text="{x:Bind Matricule,Mode=OneWay}"/>
-                                <TextBlock Text="{x:Bind Nom,Mode=OneWay}"/>
-                                <TextBlock  Text="{x:Bind Prenom,Mode=OneWay}"/>
-                                <TextBlock Text="{x:Bind DateNaissance,Mode=OneWay}"/>
-                                <TextBlock Text="{x:Bind Email,Mode=OneWay}"/>
-                                <TextBlock  Text="{x:Bind Adresse ,Mode=OneWay}"/>
-                                <TextBlock Text="{x:Bind DateEmbauche ,Mode=OneWay}"/>
-                                <TextBlock Text="{x:Bind TauxHoraire ,Mode=OneWay}"/>
-                                <TextBlock  Text="{x:Bind Photo ,Mode=OneWay}"/>
-                                <TextBlock  Text="{x:Bind Statut ,Mode=OneWay}"/>
-                            </StackPanel>
-
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-                <TextBlock  x:Name="ErreurEmployé" Text="Veillez choisir une employé"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
-
-                <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
-            </StackPanel>
-            <TextBlock x:Name="validation" Text="Ajout de Projet Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
-
-        </StackPanel>
+                <TextBlock Text="Ajout d'un projet" Margin="15" FontSize="40"  FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold" HorizontalAlignment="Center"/>
 
 
+                <!--Ajout un projet-->
 
-    </Grid>
+                <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
+                    <TextBox x:Name="tbxNumeroProjet" Header="Numero  du projet " VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurNumeroProjet" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="2" Padding="20">
+                    <TextBox x:Name="tbxTitre" Header="titre du projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurTitre" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Grid.Column="3" Padding="20">
+                    <TextBox x:Name="tbxDateDebut" Header="Date du debut du projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurDateDebut" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="4" Grid.Column="4" Padding="20">
+                    <TextBox x:Name="tbxDescription" Header="Description du projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurDescription" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="5" Grid.Column="5" Padding="20">
+                    <TextBox x:Name="tbxBudget"  Header="Budget du projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurBudget" Foreground="Red" FontSize="15" />
+                  </StackPanel>
+
+
+                <StackPanel Grid.Row="6" Grid.Column="6" Padding="20">
+                    <TextBox x:Name="tbxNbrEmploye"  Header="Nombre d'Employé sur un projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurNbrEmploye" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="7" Grid.Column="7" Padding="20">
+                    <TextBox x:Name="tbxTotalSal"  Header="le salaire total payé pour un projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurTotalSal" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="8" Grid.Column="8" Padding="20">
+                    <TextBox x:Name="tbxClient"  Header="le Client du projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurClient" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="9" Grid.Column="9" Padding="20">
+                    <TextBox x:Name="tbxStatut"  Header="le Statut du projet" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurStatut" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <Button x:Name="btAjouter" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btAjouter_Click">
+                    <TextBlock Foreground="DarkGreen">Ajouter le projet</TextBlock>
+                </Button>
+
+
+            </Grid>
+
+        </Grid>
+
+    </ScrollViewer>
 </Page>

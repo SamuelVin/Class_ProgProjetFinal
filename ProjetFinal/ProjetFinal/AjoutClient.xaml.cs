@@ -28,84 +28,78 @@ namespace ProjetFinal
             this.InitializeComponent();
         }
 
-
-        private void btn_Click(object sender, RoutedEventArgs e)
+        private async void btAjouter_Click(object sender, RoutedEventArgs e)
         {
-            int valide = 0;
+            resetErreurs();
+            bool valide = true;
 
-            if (tbxIdClient.Text.Trim() == "")
+            if (SingletonClient.getInstance().isIdClienValide(tbxIdClient.Text) == false)
             {
-
-
-                ErreurIdClient.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-            if (tbxNom.Text.Trim() == "")
-            {
-
-
-                ErreurNom.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxEmail.Text.Trim() == "")
-            {
-
-
-                ErreurEmail.Visibility = Visibility.Visible;
-                valide += 1;
-
+                tblErreurIdClient.Text = "Veuillez entrer l'id du client";
+                valide = false;
             }
 
 
-            if (tbxAdresse.Text.Trim() == "")
+            if (SingletonClient.getInstance().isNomValide(tbxNom.Text) == false)
             {
-
-
-                ErreurAdresse.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxTelephone.Text.Trim() == "")
-            {
-
-
-                ErreurTelephone.Visibility = Visibility.Visible;
-                valide += 1;
-
+                tblErreurNom.Text = "Veuillez entrer le nom du client";
+                valide = false;
             }
 
 
-            if (valide == 0)
+            if (SingletonClient.getInstance().isEmailValide(tbxEmail.Text) == false)
             {
-                SingletonClient.getInstance().AjouterEmployer(tbxIdClient.Text, tbxNom.Text, tbxEmail.Text, tbxAdresse.Text, tbxTelephone.Text);
-                formClient.Visibility = Visibility.Collapsed;
-                validation.Visibility = Visibility.Visible;
+                tblErreurEmail.Text = "Veuillez entrer l'Email du client";
+                valide = false;
             }
 
 
+            if (SingletonClient.getInstance().isAdresseValide(tbxAdresse.Text) == false)
+            {
+                tblErreurAdresse.Text = "Veuillez entrer l'Adresse du client";
+                valide = false;
+            }
 
+
+            if (SingletonClient.getInstance().isTelephoneValide(tbxTelephone.Text) == false)
+            {
+                tblErreurTelephone.Text = "Veuillez entrer l'id du client";
+                valide = false;
+            }
+
+            if (valide == true)
+            {
+                Client client = new Client
+                {
+                    IdClient = int.Parse (tbxIdClient.Text),
+                    Nom = tbxNom.Text,
+                    Email = tbxEmail.Text,
+                    Adresse= tbxAdresse.Text,
+                    Telephone = tbxTelephone.Text, 
+                };
+
+                SingletonClient.getInstance().ajouter(client);
+
+                ContentDialog dialog = new ContentDialog();
+                dialog.Title = "Ajout du client";
+                dialog.PrimaryButtonText = "OK";
+                dialog.DefaultButton = ContentDialogButton.Primary;
+                dialog.Content = "Le client a été ajouté avec succès";
+
+                ContentDialogResult resultat = await dialog.ShowAsync();
+
+            }
+        }
+        private void resetErreurs()
+        {
+            tblErreurIdClient.Text = string.Empty;
+            tblErreurNom.Text = string.Empty;
+            tblErreurEmail.Text = string.Empty;
+            tblErreurAdresse.Text = string.Empty;
+            tblErreurTelephone.Text = string.Empty;
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+
 }

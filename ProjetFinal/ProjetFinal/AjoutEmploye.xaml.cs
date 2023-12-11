@@ -28,129 +28,131 @@ namespace ProjetFinal
             this.InitializeComponent();
         }
 
-        private void btn_Click(object sender, RoutedEventArgs e)
+        private async void btAjouter_Click(object sender, RoutedEventArgs e)
         {
-            int valide = 0;
+            resetErreurs();
+            bool valide = true;
 
-            if (tbxMatriculeEmployé.Text.Trim() == "")
+            if (SingletonEmploye.getInstance().isMatriculeValide(tbxMatricule.Text) == false)
             {
-
-
-                ErreurMatricule.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-            if (tbxNomEmployé.Text.Trim() == "")
-            {
-
-
-                ErreurEmployé.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxPrenomEmployé.Text.Trim() == "")
-            {
-
-
-                ErreurPrenom.Visibility = Visibility.Visible;
-                valide += 1;
-
+                tblErreurMatricule.Text = "Veuillez entrer le matricule de l'employé";
+                valide = false;
             }
 
 
-            if (tbxDateNaissance.Text.Trim() == "")
+            if (SingletonEmploye.getInstance().isNomValide(tbxNom.Text) == false)
             {
-
-
-                ErreurDateNaissance.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxEmail.Text.Trim() == "")
-            {
-
-
-                ErreurEmail.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxAdresse.Text.Trim() == "")
-            {
-
-
-                ErreurAdresse.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxDateEmbauche.Text.Trim() == "")
-            {
-
-
-                ErreurDateEmbauche.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxTauxHoraire.Text.Trim() == "")
-            {
-
-
-                ErreurTauxHoraire.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-
-            if (tbxPhoto.Text.Trim() == "")
-            {
-
-
-                ErreurPhoto.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-            if (tbxStatut.Text.Trim() == "")
-            {
-
-
-                ErreurStatut.Visibility = Visibility.Visible;
-                valide += 1;
-
-            }
-
-
-            if (valide == 0)
-            {
-                //SingletonEmploye.getInstance().AjouterEmployer(tbxMatriculeEmployé.Text, tbxNomEmployé.Text, tbxPrenomEmployé.Text, tbxDateNaissance.Text, tbxEmail.Text, tbxAdresse.Text, tbxDateEmbauche.Text, tbxTauxHoraire.Text, tbxPhoto.Text, tbxStatut.Text);
-                //formEmployé1.Visibility = Visibility.Collapsed;
-                //validation2.Visibility = Visibility.Visible;
+                tblErreurNom.Text = "Veuillez entrer le nom de l'employé";
+                valide = false;
             }
 
 
 
+            if (SingletonEmploye.getInstance().isPrenomValide(tbxPrenom.Text) == false)
+            {
+                tblErreurPrenom.Text = "Veuillez entrer le prenom de l'employé";
+                valide = false;
+            }
+
+
+            if (SingletonEmploye.getInstance().isDateNaissanceValide(tbxDateNaissance.Text) == false)
+            {
+                tblErreurDateNaissance.Text = "Veuillez entrer la date de naissance de l'employé";
+                valide = false;
+            }
+
+
+            if (SingletonEmploye.getInstance().isEmailValide(tbxEmail.Text) == false)
+            {
+                tblErreurEmail.Text = "Veuillez entrer l'email de l'employé";
+                valide = false;
+            }
+
+
+            if (SingletonEmploye.getInstance().isAdresseValide(tbxAdresse.Text) == false)
+            {
+                tblErreurAdresse.Text = "Veuillez entrer l'adresse de l'employé";
+                valide = false;
+            }
+
+
+
+
+            if (SingletonEmploye.getInstance().isDateEmbaucheValide(tbxDateEmbauche.Text) == false)
+            {
+                tblErreurDateEmbauche.Text = "Veuillez entrer la Date d'embauche de l'employé";
+                valide = false;
+            }
+
+
+            if (SingletonEmploye.getInstance().isTauxHoraireValide(tbxTauxHoraire.Text) == false)
+            {
+                tblErreurTauxHoraire.Text = "Veuillez entrer le Taux horaire de l'employé";
+                valide = false;
+            }
+
+
+
+            if (SingletonEmploye.getInstance().isPhotoValide(tbxPhoto.Text) == false)
+            {
+                tblErreurPhoto.Text = "Veuillez entrer la Photo de l'employé";
+                valide = false;
+            }
+
+
+
+            if (SingletonEmploye.getInstance().isStatutValide(tbxStatut.Text) == false)
+            {
+                tblErreurStatut.Text = "Veuillez entrer le statut de l'employé";
+                valide = false;
+            }
+
+
+
+            if (valide == true)
+            {
+                Employe  employe = new Employe
+                {
+                    Matricule = tbxMatricule.Text,
+                    Nom = tbxNom.Text,
+                    Prenom = tbxPrenom.Text,
+                    DateNaissance= tbxDateNaissance.Text,
+                    Email = tbxEmail.Text,
+                    Adresse = tbxAdresse.Text,
+                    DateEmbauche= tbxDateEmbauche.Text,
+                    TauxHoraire= tbxDateEmbauche.Text,
+                    Photo = tbxPhoto.Text,
+                    Statut = tbxStatut.Text,
+                };
+
+                SingletonEmploye.getInstance().ajouter(employe);
+
+                ContentDialog dialog = new ContentDialog();
+                dialog.Title = "Ajout de l'employé";
+                dialog.PrimaryButtonText = "OK";
+                dialog.DefaultButton = ContentDialogButton.Primary;
+                dialog.Content = "L'employé a été ajouté avec succès";
+
+                ContentDialogResult resultat = await dialog.ShowAsync();
+
+            }
+        }
+        private void resetErreurs()
+        {
+            tblErreurMatricule.Text = string.Empty;
+            tblErreurNom.Text = string.Empty;
+            tblErreurPrenom.Text = string.Empty;
+            tblErreurDateNaissance.Text = string.Empty;
+            tblErreurEmail.Text = string.Empty;
+            tblErreurAdresse.Text = string.Empty;
+            tblErreurDateEmbauche.Text = string.Empty;
+            tbxTauxHoraire.Text = string.Empty;
+            tblErreurPhoto.Text = string.Empty;
+            tblErreurStatut.Text = string.Empty;
         }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+    
 }
