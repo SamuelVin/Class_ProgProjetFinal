@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Protection.PlayReady;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -79,7 +80,7 @@ namespace ProjetFinal
                     Telephone = tbxTelephone.Text,
                 };
 
-                SingletonClient.getInstance().ajouter(client);
+                SingletonClient.getInstance().AddClients(int.Parse(tbxIdClient.Text), tbxNom.Text,  tbxEmail.Text,  tbxAdresse.Text,  tbxTelephone.Text);
 
                 ContentDialog dialog = new ContentDialog();
                 dialog.Title = "Ajout du client";

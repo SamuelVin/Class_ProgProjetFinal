@@ -15,6 +15,21 @@ namespace ProjetFinal
         MySqlConnection con;
         ObservableCollection<Projet> listeProjet;
 
+        public SingletonEmploye()
+        {
+            con = new MySqlConnection("Server=cours.cegep3r.info; Database=a2023_420325ri_fabeq2; Uid=2260734; Pwd=2260734;");
+            listeProjet = new ObservableCollection<Projet>();
+        }
+
+        public static SingletonEmploye getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new SingletonEmploye();
+            }
+            return instance;
+        }
+
         public ObservableCollection<Employe> GetEmploye()
         {
             ObservableCollection<Employe> listeEmploye = new ObservableCollection<Employe>();

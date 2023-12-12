@@ -119,7 +119,7 @@ namespace ProjetFinal
 
                 };
 
-                SingletonProjet.getInstance().ajouter(projet);
+                SingletonProjet.getInstance().AddProjets(tbxNumeroProjet.Text, tbxTitre.Text, tbxDateDebut.Text, tbxDescription.Text, int.Parse(tbxBudget.Text), int.Parse(tbxNbrEmploye.Text), double.Parse(tbxTotalSal.Text), int.Parse(tbxClient.Text), tbxStatut.Text);
 
                 ContentDialog dialog = new ContentDialog();
                 dialog.Title = "Ajout d'un projet";

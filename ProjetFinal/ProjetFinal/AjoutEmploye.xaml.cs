@@ -121,12 +121,12 @@ namespace ProjetFinal
                     Email = tbxEmail.Text,
                     Adresse = tbxAdresse.Text,
                     DateEmbauche = tbxDateEmbauche.Text,
-                    TauxHoraire = tbxDateEmbauche.Text,
+                    TauxHoraire =double.Parse( tbxDateEmbauche.Text),
                     Photo = tbxPhoto.Text,
                     Statut = tbxStatut.Text,
                 };
 
-                SingletonEmploye.getInstance().ajouter(employe);
+                SingletonEmploye.getInstance().AddEmploye(tbxMatricule.Text, tbxNom.Text, tbxPrenom.Text, tbxDateNaissance.Text, tbxEmail.Text, tbxAdresse.Text, tbxDateEmbauche.Text, double.Parse(tbxDateEmbauche.Text), tbxPhoto.Text, tbxStatut.Text);
 
                 ContentDialog dialog = new ContentDialog();
                 dialog.Title = "Ajout de l'employé";
