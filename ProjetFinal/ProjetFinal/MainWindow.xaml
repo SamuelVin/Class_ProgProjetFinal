@@ -8,14 +8,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="#1a1a1a">
+    <StackPanel>
+        <NavigationView PaneDisplayMode="Left" PaneTitle="Agance and Samuel company" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="#1a1a1a" IsBackButtonVisible="Visible" >
+
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Name="NavBut1" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Projets"/>
-                <NavigationViewItem x:Name="NavBut2" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Clients"/>
-                <NavigationViewItem x:Name="NavBut3" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Employés"/>
+                <AutoSuggestBox Width="200"  PlaceholderText="Rechercher" QueryIcon="Find"></AutoSuggestBox>
+                <NavigationViewItemHeader Content="Menu"></NavigationViewItemHeader>
+
+                <NavigationViewItem x:Name="NavBut1" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Projets" Icon="PhoneBook"/>
+                <NavigationViewItem x:Name="NavBut2" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Clients"  Icon="AddFriend"/>
+                <NavigationViewItem x:Name="NavBut3" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Employés"  Icon="AddFriend"/>
+
+                <NavigationViewItemSeparator />
+
             </NavigationView.MenuItems>
+            <NavigationView.PaneFooter>
+                <NavigationViewItem Name="iDeconnexion" Content="Déconnexion" Icon="LeaveChat" />
+            </NavigationView.PaneFooter>
+            
             <Frame x:Name="mainFrame" Grid.Row="1" Background="Aqua"/>
         </NavigationView>
-    </Grid>
+   
+
+</StackPanel>
+    
+    
+    
 </Window>
