@@ -20,16 +20,24 @@ namespace ProjetFinal
             instance = new ValidationClient();
 
         return instance;
-    }
+    }  
 
-
-    public bool isIdClientValide(int index)
+        public bool isIdClientValide(string index)
     {
-        if (index >= 0)
-            return true;
-        else
-            return false;
-    }
+            try
+            {
+
+                double nbr4 = Convert.ToDouble(index);
+                if (nbr4 >= 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
     public bool isNomValide(string nom)
     {

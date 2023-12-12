@@ -33,15 +33,15 @@ namespace ProjetFinal
             resetErreurs();
             bool valide = true;
 
-            /*
-            if (SingletonEmploye.getInstance().isMatriculeValide(tbxMatricule.Text) == false)
+
+            if (ValidationEmploye.getInstance().isMatriculeValide(tbxMatricule.Text) == false)
             {
                 tblErreurMatricule.Text = "Veuillez entrer le matricule de l'employé";
                 valide = false;
             }
 
 
-            if (SingletonEmploye.getInstance().isNomValide(tbxNom.Text) == false)
+            if (ValidationEmploye.getInstance().isNomValide(tbxNom.Text) == false)
             {
                 tblErreurNom.Text = "Veuillez entrer le nom de l'employé";
                 valide = false;
@@ -49,28 +49,28 @@ namespace ProjetFinal
 
 
 
-            if (SingletonEmploye.getInstance().isPrenomValide(tbxPrenom.Text) == false)
+            if (ValidationEmploye.getInstance().isPrenomValide(tbxPrenom.Text) == false)
             {
                 tblErreurPrenom.Text = "Veuillez entrer le prenom de l'employé";
                 valide = false;
             }
 
 
-            if (SingletonEmploye.getInstance().isDateNaissanceValide(tbxDateNaissance.Text) == false)
+            if (ValidationEmploye.getInstance().isDateNaissanceValide(tbxDateNaissance.Text) == false)
             {
                 tblErreurDateNaissance.Text = "Veuillez entrer la date de naissance de l'employé";
                 valide = false;
             }
 
 
-            if (SingletonEmploye.getInstance().isEmailValide(tbxEmail.Text) == false)
+            if (ValidationEmploye.getInstance().isEmailValide(tbxEmail.Text) == false)
             {
                 tblErreurEmail.Text = "Veuillez entrer l'email de l'employé";
                 valide = false;
             }
 
 
-            if (SingletonEmploye.getInstance().isAdresseValide(tbxAdresse.Text) == false)
+            if (ValidationEmploye.getInstance().isAdresseValide(tbxAdresse.Text) == false)
             {
                 tblErreurAdresse.Text = "Veuillez entrer l'adresse de l'employé";
                 valide = false;
@@ -79,14 +79,14 @@ namespace ProjetFinal
 
 
 
-            if (SingletonEmploye.getInstance().isDateEmbaucheValide(tbxDateEmbauche.Text) == false)
+            if (ValidationEmploye.getInstance().isDateEmbaucheValide(tbxDateEmbauche.Text) == false)
             {
                 tblErreurDateEmbauche.Text = "Veuillez entrer la Date d'embauche de l'employé";
                 valide = false;
             }
 
 
-            if (SingletonEmploye.getInstance().isTauxHoraireValide(tbxTauxHoraire.Text) == false)
+            if (ValidationEmploye.getInstance().isTauxHoraireValide(tbxTauxHoraire.Text) == false)
             {
                 tblErreurTauxHoraire.Text = "Veuillez entrer le Taux horaire de l'employé";
                 valide = false;
@@ -94,7 +94,7 @@ namespace ProjetFinal
 
 
 
-            if (SingletonEmploye.getInstance().isPhotoValide(tbxPhoto.Text) == false)
+            if (ValidationEmploye.getInstance().isPhotoValide(tbxPhoto.Text) == false)
             {
                 tblErreurPhoto.Text = "Veuillez entrer la Photo de l'employé";
                 valide = false;
@@ -102,7 +102,7 @@ namespace ProjetFinal
 
 
 
-            if (SingletonEmploye.getInstance().isStatutValide(tbxStatut.Text) == false)
+            if (ValidationEmploye.getInstance().isStatutValide(tbxStatut.Text) == false)
             {
                 tblErreurStatut.Text = "Veuillez entrer le statut de l'employé";
                 valide = false;
@@ -112,16 +112,16 @@ namespace ProjetFinal
 
             if (valide == true)
             {
-                Employe  employe = new Employe
+                Employe employe = new Employe
                 {
                     Matricule = tbxMatricule.Text,
                     Nom = tbxNom.Text,
                     Prenom = tbxPrenom.Text,
-                    DateNaissance= tbxDateNaissance.Text,
+                    DateNaissance = tbxDateNaissance.Text,
                     Email = tbxEmail.Text,
                     Adresse = tbxAdresse.Text,
-                    DateEmbauche= tbxDateEmbauche.Text,
-                    TauxHoraire= tbxDateEmbauche.Text,
+                    DateEmbauche = tbxDateEmbauche.Text,
+                    TauxHoraire = tbxDateEmbauche.Text,
                     Photo = tbxPhoto.Text,
                     Statut = tbxStatut.Text,
                 };
@@ -137,7 +137,7 @@ namespace ProjetFinal
                 ContentDialogResult resultat = await dialog.ShowAsync();
 
             }
-            */
+
         }
         private void resetErreurs()
         {

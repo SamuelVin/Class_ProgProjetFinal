@@ -36,21 +36,21 @@ namespace ProjetFinal
             resetErreurs();
             bool valide = true;
 
-            /*
-            if (SingletonProjet.getInstance().isNumeroProjetValide(tbxNumeroProjet.Text) == false)
+
+            if (ValidationProjet.getInstance().isNumeroProjetValide(tbxNumeroProjet.Text) == false)
             {
                 tblErreurNumeroProjet.Text = "Veuillez entrer le numero  du projet";
                 valide = false;
             }
 
 
-            if (SingletonProjet.getInstance().isTitreValide(tbxTitre.Text) == false)
+            if (ValidationProjet.getInstance().isTitreValide(tbxTitre.Text) == false)
             {
                 tblErreurTitre.Text = "Veuillez entrer le titre  du projet";
                 valide = false;
             }
 
-            if (SingletonProjet.getInstance().isDateDebutValide(tbxDateDebut.Text) == false)
+            if (ValidationProjet.getInstance().isDateDebutValide(tbxDateDebut.Text) == false)
             {
                 tblErreurDateDebut.Text = "Veuillez entrer la date de debut  du projet";
                 valide = false;
@@ -58,7 +58,7 @@ namespace ProjetFinal
 
 
 
-            if (SingletonProjet.getInstance().isDescriptionValide(tbxDescription.Text) == false)
+            if (ValidationProjet.getInstance().isDescriptionValide(tbxDescription.Text) == false)
             {
                 tblErreurDescription.Text = "Veuillez entrer le numero  du projet";
                 valide = false;
@@ -66,13 +66,13 @@ namespace ProjetFinal
 
 
 
-            if (SingletonProjet.getInstance().isBudgetValide(tbxBudget.Text) == false)
+            if (ValidationProjet.getInstance().isBudgetValide(tbxBudget.Text) == false)
             {
                 tblErreurBudget.Text = "Veuillez entrer le budget du projet";
                 valide = false;
             }
 
-            if (SingletonProjet.getInstance().isNbrEmployeValide(tbxNbrEmploye.Text) == false)
+            if (ValidationProjet.getInstance().isNbrEmployeValide(tbxNbrEmploye.Text) == false)
             {
                 tblErreurNbrEmploye.Text = "Veuillez entrer le nombre d'employé sur un projet";
                 valide = false;
@@ -80,21 +80,21 @@ namespace ProjetFinal
 
 
 
-            if (SingletonProjet.getInstance().isTotalSalValide(tbxTotalSal.Text) == false)
+            if (ValidationProjet.getInstance().isTotalSalValide(tbxTotalSal.Text) == false)
             {
                 tblErreurTotalSal.Text = "Veuillez entrer le salaire total d'un employé ";
                 valide = false;
             }
 
 
-            if (SingletonProjet.getInstance().isClientValide(tbxClient.Text) == false)
+            if (ValidationProjet.getInstance().isClientValide(tbxClient.Text) == false)
             {
                 tblErreurClient.Text = "Veuillez entrer le client du projet";
                 valide = false;
             }
 
 
-            if (SingletonProjet.getInstance().isStatutValide(tbxStatut.Text) == false)
+            if (ValidationProjet.getInstance().isStatutValide(tbxStatut.Text) == false)
             {
                 tblErreurStatut.Text = "Veuillez entrer le Statut du projet";
                 valide = false;
@@ -106,17 +106,17 @@ namespace ProjetFinal
                 Projet projet = new Projet
                 {
 
-                    NumeroProjet=tbxNumeroProjet.Text,
-                    Titre=tbxTitre.Text,
-                    DateDebut=tbxDateDebut.Text,
-                    Description=tbxDescription.Text,
-                    Budget=  int.Parse(tbxBudget.Text),
-                    NbrEmploye= int.Parse(tbxNbrEmploye.Text),
-                    TotalSal= double.Parse(tbxTotalSal.Text),
-                    Client= int.Parse(tbxClient.Text),
-                    Statut=tbxStatut.Text,
-                    
-                    
+                    NumeroProjet = tbxNumeroProjet.Text,
+                    Titre = tbxTitre.Text,
+                    DateDebut = tbxDateDebut.Text,
+                    Description = tbxDescription.Text,
+                    Budget = int.Parse(tbxBudget.Text),
+                    NbrEmploye = int.Parse(tbxNbrEmploye.Text),
+                    TotalSal = double.Parse(tbxTotalSal.Text),
+                    Client = int.Parse(tbxClient.Text),
+                    Statut = tbxStatut.Text,
+
+
                 };
 
                 SingletonProjet.getInstance().ajouter(projet);
@@ -132,7 +132,7 @@ namespace ProjetFinal
                 this.Frame.Navigate(typeof(Page_Projet));
 
             }
-            */
+
         }
         private void resetErreurs()
         {

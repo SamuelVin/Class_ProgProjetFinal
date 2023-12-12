@@ -33,7 +33,7 @@
             <TextBlock Text="Ajout d'un article" Margin="15" FontSize="40" FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold" HorizontalAlignment="Center"/>
 
 
-<!--Ajout un Client-->
+        <!--Ajout un Client-->
 
             <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
                 <TextBox x:Name="tbxIdClient"  Header="id du client" VerticalAlignment="Top"/>
