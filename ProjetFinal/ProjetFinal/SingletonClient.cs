@@ -1,5 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI;
+﻿using Microsoft.WindowsAppSDK.Runtime.Packages;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +11,7 @@ namespace ProjetFinal
 {
     internal class SingletonClient
     {
-        static SingletonProjet instance = null;
+        static SingletonClient instance = null;
         MySqlConnection con;
         ObservableCollection<Client> listeClient;
 
@@ -21,44 +21,13 @@ namespace ProjetFinal
             listeClient = new ObservableCollection<Client>();
         }
 
-        public static SingletonProjet getInstance()
+        public static SingletonClient getInstance()
         {
             if (instance == null)
             {
-                instance = new SingletonProjet();
+                instance = new SingletonClient();
             }
             return instance;
-        }
-        public void AjouterClient(int idClient, string nom, string email, string adresse, string telephone)
-        {
-
-            try
-            {
-                MySqlCommand commande = new MySqlCommand();
-                commande.Connection = con;
-                /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
-                commande.CommandText = "insert into client values(@idClient,@nom,@email,@adresse,@telephone) ";
-
-                //commande.Parameters.AddWithValue("@id", id);
-                commande.Parameters.AddWithValue("@idClient", idClient);
-                commande.Parameters.AddWithValue("@nom", nom);
-                commande.Parameters.AddWithValue("@email", email);
-                commande.Parameters.AddWithValue("@adresse", adresse);
-                commande.Parameters.AddWithValue("@telephone", telephone);
-
-
-                con.Open();
-                commande.Prepare();
-                int i = commande.ExecuteNonQuery();
-
-                con.Close();
-            }
-            catch (MySqlException ex)
-            {
-                con.Close();
-            }
-
-
         }
 
         public ObservableCollection<Client> GetClients()
@@ -69,7 +38,7 @@ namespace ProjetFinal
 
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
-                commande.CommandText = "select * from employec";
+                commande.CommandText = "SelectClient";
 
                 con.Open();
                 MySqlDataReader r = commande.ExecuteReader();
@@ -93,10 +62,70 @@ namespace ProjetFinal
                 if (con.State == System.Data.ConnectionState.Open)
                 {
                     con.Close();
+                    Console.Write("Message d'erreur: " + ex.ToString());
                 }
             }
             return listeClient;
         }
+
+        public void AddClients(int idClient, string nom, string email, string adresse, string telephone)
+        {
+            try
+            {
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
+                commande.CommandText = "AddClient";
+
+                //commande.Parameters.AddWithValue("@id", id);
+                commande.Parameters.AddWithValue("@idClient", idClient);
+                commande.Parameters.AddWithValue("@nom", nom);
+                commande.Parameters.AddWithValue("@email", email);
+                commande.Parameters.AddWithValue("@adresse", adresse);
+                commande.Parameters.AddWithValue("@telephone", telephone);
+
+
+                con.Open();
+                commande.Prepare();
+                int i = commande.ExecuteNonQuery();
+
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                con.Close();
+            }
+        }
+
+        public void UpdateProjets(int idClient, string nom, string email, string adresse, string telephone)
+        {
+            try
+            {
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "UpdateClient";
+
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                commande.Parameters.AddWithValue("@idClient", idClient);
+                commande.Parameters.AddWithValue("@nom", nom);
+                commande.Parameters.AddWithValue("@email", email);
+                commande.Parameters.AddWithValue("@adresse", adresse);
+                commande.Parameters.AddWithValue("@telephone", telephone);
+
+                r.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
     }
 }
 

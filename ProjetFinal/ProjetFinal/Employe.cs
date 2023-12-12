@@ -15,7 +15,7 @@ namespace ProjetFinal
         String email;
         String adresse;
         String dateEmbauche;
-        String tauxHoraire;
+        double tauxHoraire;
         String photo;
         String statut;
 
@@ -28,14 +28,14 @@ namespace ProjetFinal
             this.email = "";
             this.adresse = "";
             this.dateEmbauche = "";
-            this.tauxHoraire= "";
+            this.tauxHoraire= 0.0;
             this.photo = "";
             this.statut= "";
 
 
         }
 
-        public Employe(string _matricule, string _nom, string _prenom ,string _dateNaissance, string _email, string _adresse ,string _dateEmbauche, string _tauxHoraire, string _photo, string _statut)
+        public Employe(string _matricule, string _nom, string _prenom ,string _dateNaissance, string _email, string _adresse ,string _dateEmbauche, double _tauxHoraire, string _photo, string _statut)
         {
             this.Matricule = _matricule;
             this.Nom = _nom;
@@ -61,7 +61,7 @@ namespace ProjetFinal
 
 
         public string DateEmbauche { get => dateEmbauche; set => dateEmbauche = value; }
-        public string TauxHoraire { get => tauxHoraire; set => tauxHoraire = value; }
+        public double TauxHoraire { get => tauxHoraire; set => tauxHoraire = value; }
         public string Photo { get => photo; set => photo = value; }
         public string Statut { get => statut; set => statut = value; }
 

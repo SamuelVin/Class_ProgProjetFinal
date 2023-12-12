@@ -27,14 +27,8 @@ namespace ProjetFinal
         public Page_Projet()
         {
             this.InitializeComponent();
-
+            var singletonProjetInstance = SingletonProjet.getInstance();
+            lv_Affichage.ItemsSource = singletonProjetInstance.GetProjet();
         }
-
-
-
-
-
-
-
     }
 }

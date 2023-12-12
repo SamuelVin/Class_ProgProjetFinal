@@ -9,11 +9,37 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="LightGreen">
+    <Grid Background="#262626">
+        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
+        </StackPanel>
 
-
-
-
-
+        <GridView x:Name="lv_Affichage">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
+                        <StackPanel Margin="10" Background="#f2f2f2">
+                            <Grid>
+                                <TextBlock FontWeight="Bold" FontSize="18" Margin="65,0,0,0" Foreground="Black" Text="{Binding IdClient}"></TextBlock>
+                                <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Id:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="45,0,0,0" Foreground="Black" Text="{Binding Nom}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Nom:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="55,0,0,0" Foreground="Black" Text="{Binding Email}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Courriel:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="90,0,0,0" Foreground="Black" Text="{Binding Telephone}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Telephone:</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

@@ -27,6 +27,8 @@ namespace ProjetFinal
         public Page_Client()
         {
             this.InitializeComponent();
+            var singletonInstance = SingletonClient.getInstance();
+            lv_Affichage.ItemsSource = singletonInstance.GetClients();
         }
 
     }

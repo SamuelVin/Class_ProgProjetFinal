@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.WindowsAppSDK.Runtime.Packages;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,7 +37,9 @@ namespace ProjetFinal
             {
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
-                commande.CommandText = "Select * from projet";
+                commande.CommandText = "SelectProjet";
+
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
 
                 con.Open();
                 MySqlDataReader r = commande.ExecuteReader();
@@ -69,6 +72,73 @@ namespace ProjetFinal
             }
             return listeProjet;
         }
+
+        public void AddProjets(string numeroProjet, string titre, string dateDebut, string description, int budget, int nbrEmploye, double totalSal, int client, string statut)
+        {
+            try
+            {
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "AddProjet";
+
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                commande.Parameters.AddWithValue("@pnumeroProjet", numeroProjet);
+                commande.Parameters.AddWithValue("@ptitre", titre);
+                commande.Parameters.AddWithValue("@pdateDebut", dateDebut);
+                commande.Parameters.AddWithValue("@pdescription", description);
+                commande.Parameters.AddWithValue("@pbudget", budget);
+                commande.Parameters.AddWithValue("@pnbrEmploye", nbrEmploye);
+                commande.Parameters.AddWithValue("@ptotalSal", totalSal);
+                commande.Parameters.AddWithValue("@pclient", client);
+                commande.Parameters.AddWithValue("@pstatut", statut);
+
+                r.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public void UpdateProjets(string numeroProjet, string titre, string dateDebut, string description, int budget, int nbrEmploye, double totalSal, int client, string statut)
+        {
+            try
+            {
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "UpdateProjet";
+
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                commande.Parameters.AddWithValue("@pnumeroProjet", numeroProjet);
+                commande.Parameters.AddWithValue("@ptitre", titre);
+                commande.Parameters.AddWithValue("@pdateDebut", dateDebut);
+                commande.Parameters.AddWithValue("@pdescription", description);
+                commande.Parameters.AddWithValue("@pbudget", budget);
+                commande.Parameters.AddWithValue("@pnbrEmploye", nbrEmploye);
+                commande.Parameters.AddWithValue("@ptotalSal", totalSal);
+                commande.Parameters.AddWithValue("@pclient", client);
+                commande.Parameters.AddWithValue("@pstatut", statut);
+
+                r.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
 
     }
 }
