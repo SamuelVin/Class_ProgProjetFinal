@@ -112,7 +112,7 @@ namespace ProjetFinal
             }
         }
 
-        public void UpdateEmploye(string matricule, string nom, string prenom, string dateNaissance, string email, string adresse, string dateEmbauche, double tauxHoraire, string photo, string statut)
+        public void UpdateEmploye(string matricule, string dateNaissance, string dateEmbauche)
         {
             try
             {
@@ -125,15 +125,11 @@ namespace ProjetFinal
                 command.ExecuteNonQuery();
 
                 command.Parameters.AddWithValue("@pmatricule", matricule);
-                command.Parameters.AddWithValue("@pnom", nom);
-                command.Parameters.AddWithValue("@pprenom", prenom);
+                
                 command.Parameters.AddWithValue("@pdateNaissance", dateNaissance);
-                command.Parameters.AddWithValue("@pemail", email);
-                command.Parameters.AddWithValue("@padresse", adresse);
+                
                 command.Parameters.AddWithValue("@pdateEmbauche", dateEmbauche);
-                command.Parameters.AddWithValue("@ptauxHoraire", tauxHoraire);
-                command.Parameters.AddWithValue("@pphoto", photo);
-                command.Parameters.AddWithValue("@pstatut", statut);
+                
             }
             catch (Exception ex)
             {
