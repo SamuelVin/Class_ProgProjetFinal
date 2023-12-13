@@ -37,7 +37,7 @@ namespace ProjetFinal
 
         public int IdClient { get => idClient; set => idClient = value; }
         public string Nom { get => nom; set => nom = value; }
-        public string Email { get => email; set =>email = value; }
+        public string Email { get => email; set => email = value; }
         public string Adresse{ get => adresse; set => adresse = value; }
         public string Telephone { get => telephone; set => telephone = value; }
 

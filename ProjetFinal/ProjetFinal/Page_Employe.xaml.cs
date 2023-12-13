@@ -26,6 +26,8 @@ namespace ProjetFinal
         public Page_Employe()
         {
             this.InitializeComponent();
+            var singletonInstance = SingletonEmploye.getInstance();
+            lv_Affichage.ItemsSource = singletonInstance.GetEmploye();
         }
 
     }

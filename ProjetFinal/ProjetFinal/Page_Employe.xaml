@@ -9,8 +9,61 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="Crimson">
+    <Grid Background="#262626">
+        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
+        </StackPanel>
 
-        
+        <GridView x:Name="lv_Affichage">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
+                        <StackPanel Margin="10" Background="#f2f2f2">
+                            <Grid>
+                                <TextBlock FontWeight="Bold" FontSize="18" Margin="95,0,0,0" Foreground="Black" Text="{Binding Matricule}"></TextBlock>
+                                <TextBlock FontWeight="Bold" FontSize="18" Margin="5,0,0,0">Matricule:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="45,0,0,0" Foreground="Black" Text="{Binding Nom}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Nom:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="65,0,0,0" Foreground="Black" Text="{Binding Prenom}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Prenom:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="130,0,0,0" Foreground="Black" Text="{Binding DateNaissance}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Date de naissance:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="48,0,0,0" Foreground="Black" Text="{Binding Email}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Email:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="63,0,0,0" Foreground="Black" Text="{Binding Adresse}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Adresse:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="128,0,0,0" Foreground="Black" Text="{Binding DateEmbauche}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Date d'embauche:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="93,0,0,0" Foreground="Black" Text="{Binding TauxHoraire}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Taux horaire:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="53,0,0,0" Foreground="Black" Text="{Binding Photo}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Photo:</TextBlock>
+                            </Grid>
+                            <Grid>
+                                <TextBlock FontWeight="Bold" Margin="53,0,0,0" Foreground="Black" Text="{Binding Statut}"></TextBlock>
+                                <TextBlock FontWeight="Bold" Margin="5,0,0,0">Statut:</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

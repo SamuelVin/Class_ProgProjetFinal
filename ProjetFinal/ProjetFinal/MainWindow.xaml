@@ -20,6 +20,7 @@
                 <NavigationViewItem x:Name="NavBut3" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Employés"  Icon="AddFriend"/>
 
                 <NavigationViewItemSeparator />
+                
 
             </NavigationView.MenuItems>
             <NavigationView.PaneFooter>

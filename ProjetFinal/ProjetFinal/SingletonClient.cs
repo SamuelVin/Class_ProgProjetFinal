@@ -40,12 +40,14 @@ namespace ProjetFinal
                 commande.Connection = con;
                 commande.CommandText = "SelectClient";
 
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
+
                 con.Open();
                 MySqlDataReader r = commande.ExecuteReader();
 
                 while (r.Read())
                 {
-                    int idClient = (int)r["id_Client"];
+                    int idClient = (int)r["id_client"];
                     string nom = (string)r["nom"];
                     string email = (string)r["email"];
                     string adresse = (string)r["adresse"];
@@ -62,7 +64,6 @@ namespace ProjetFinal
                 if (con.State == System.Data.ConnectionState.Open)
                 {
                     con.Close();
-                    Console.Write("Message d'erreur: " + ex.ToString());
                 }
             }
             return listeClient;

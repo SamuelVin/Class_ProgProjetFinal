@@ -30,5 +30,15 @@ namespace ProjetFinal
             var singletonProjetInstance = SingletonProjet.getInstance();
             lv_Affichage.ItemsSource = singletonProjetInstance.GetProjet();
         }
+
+        private void Bt_Mod_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Bt_Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

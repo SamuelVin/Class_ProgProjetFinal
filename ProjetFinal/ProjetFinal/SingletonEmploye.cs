@@ -13,12 +13,12 @@ namespace ProjetFinal
     {
         static SingletonEmploye instance = null;
         MySqlConnection con;
-        ObservableCollection<Projet> listeProjet;
+        ObservableCollection<Employe> listeEmploye;
 
         public SingletonEmploye()
         {
             con = new MySqlConnection("Server=cours.cegep3r.info; Database=a2023_420325ri_fabeq2; Uid=2260734; Pwd=2260734;");
-            listeProjet = new ObservableCollection<Projet>();
+            listeEmploye = new ObservableCollection<Employe>();
         }
 
         public static SingletonEmploye getInstance()
@@ -32,12 +32,13 @@ namespace ProjetFinal
 
         public ObservableCollection<Employe> GetEmploye()
         {
-            ObservableCollection<Employe> listeEmploye = new ObservableCollection<Employe>();
+            listeEmploye.Clear();
             try
             {
                 MySqlCommand command = new MySqlCommand();
                 command.Connection = con;
                 command.CommandText = "SelectEmploye";
+
                 command.CommandType = CommandType.StoredProcedure;
 
                 con.Open();
@@ -61,14 +62,11 @@ namespace ProjetFinal
                 }
 
                 r.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
-                // Handle exception
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
+                if (con.State == System.Data.ConnectionState.Open)
                 {
                     con.Close();
                 }
