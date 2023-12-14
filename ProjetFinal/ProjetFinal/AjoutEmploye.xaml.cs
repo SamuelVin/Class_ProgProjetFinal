@@ -129,6 +129,7 @@ namespace ProjetFinal
                 SingletonEmploye.getInstance().AddEmploye(tbxMatricule.Text, tbxNom.Text, tbxPrenom.Text, tbxDateNaissance.Text, tbxEmail.Text, tbxAdresse.Text, tbxDateEmbauche.Text, double.Parse(tbxDateEmbauche.Text), tbxPhoto.Text, tbxStatut.Text);
 
                 ContentDialog dialog = new ContentDialog();
+                dialog.XamlRoot = mainGrid.XamlRoot;
                 dialog.Title = "Ajout de l'employé";
                 dialog.PrimaryButtonText = "OK";
                 dialog.DefaultButton = ContentDialogButton.Primary;

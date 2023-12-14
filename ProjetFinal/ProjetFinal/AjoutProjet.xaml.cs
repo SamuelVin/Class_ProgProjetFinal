@@ -122,6 +122,7 @@ namespace ProjetFinal
                 SingletonProjet.getInstance().AddProjets(tbxNumeroProjet.Text, tbxTitre.Text, tbxDateDebut.Text, tbxDescription.Text, int.Parse(tbxBudget.Text), int.Parse(tbxNbrEmploye.Text), double.Parse(tbxTotalSal.Text), int.Parse(tbxClient.Text), tbxStatut.Text);
 
                 ContentDialog dialog = new ContentDialog();
+                dialog.XamlRoot = mainGrid.XamlRoot;
                 dialog.Title = "Ajout d'un projet";
                 dialog.PrimaryButtonText = "OK";
                 dialog.DefaultButton = ContentDialogButton.Primary;

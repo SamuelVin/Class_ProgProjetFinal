@@ -83,6 +83,7 @@ namespace ProjetFinal
                 SingletonClient.getInstance().AddClients(int.Parse(tbxIdClient.Text), tbxNom.Text,  tbxEmail.Text,  tbxAdresse.Text,  tbxTelephone.Text);
 
                 ContentDialog dialog = new ContentDialog();
+                dialog.XamlRoot = mainGrid.XamlRoot;
                 dialog.Title = "Ajout du client";
                 dialog.PrimaryButtonText = "OK";
                 dialog.DefaultButton = ContentDialogButton.Primary;
