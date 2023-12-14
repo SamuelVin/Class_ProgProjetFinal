@@ -12,7 +12,7 @@
 
     <ScrollViewer>
 
-        <Grid Background="Crimson">
+        <Grid   Padding="40" x:Name="mainGrid" Background="Crimson">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />

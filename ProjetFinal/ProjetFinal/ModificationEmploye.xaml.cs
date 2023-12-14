@@ -70,6 +70,7 @@ namespace ProjetFinal
                 SingletonEmploye.getInstance().UpdateEmploye(tbxMatricule.Text,tbxDateNaissance.Text, tbxDateEmbauche.Text);
 
                 ContentDialog dialog = new ContentDialog();
+                dialog.XamlRoot = mainGrid.XamlRoot;
                 dialog.Title = "Modification de l'employé";
                 dialog.PrimaryButtonText = "OK";
                 dialog.DefaultButton = ContentDialogButton.Primary;
