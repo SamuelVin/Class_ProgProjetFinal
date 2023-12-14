@@ -25,14 +25,14 @@
                 <NavigationViewItem x:Name="NavBut3" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Employés"  Icon="AddFriend"/>
 
                 <NavigationViewItemSeparator />
-
-
+                
             </NavigationView.MenuItems>
             <NavigationView.PaneFooter>
-                <NavigationViewItem Name="iDeconnexion" Content="Déconnexion" Icon="LeaveChat" />
+                <NavigationViewItem Name="bt_User" Content="Connexion" Icon="LeaveChat" />
             </NavigationView.PaneFooter>
 
-            <Frame x:Name="mainFrame" Grid.Row="1" Background="Aqua"/>
+            <Frame x:Name="mainFrame" Grid.Row="1" Background="#1a1a1a"/>
+
         </NavigationView>
     </StackPanel>
 </Window>

@@ -27,7 +27,10 @@ namespace ProjetFinal
         {
             InitializeComponent();
             mainFrame.Navigate(typeof(Page_Projet));
+            Bt_Mod.Visibility = Visibility.Collapsed;
         }
+
+        Boolean IsConnected = false;
 
         private void navView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
@@ -37,12 +40,15 @@ namespace ProjetFinal
             {
                 case "NavBut1":
                     mainFrame.Navigate(typeof(Page_Projet));
+                    Bt_Mod.Visibility = Visibility.Collapsed;
                     break;
                 case "NavBut2":
                     mainFrame.Navigate(typeof(Page_Client));
+                    Bt_Mod.Visibility = Visibility.Collapsed;
                     break;
                 case "NavBut3":
                     mainFrame.Navigate(typeof(Page_Employe));
+                    Bt_Mod.Visibility = Visibility.Visible;
                     break;
             }
         }
@@ -55,12 +61,15 @@ namespace ProjetFinal
                 {
                     case "NavBut1":
                         mainFrame.Navigate(typeof(AjoutProjet));
+                        Bt_Mod.Visibility = Visibility.Collapsed;
                         break;
                     case "NavBut2":
                         mainFrame.Navigate(typeof(AjoutClient));
+                        Bt_Mod.Visibility = Visibility.Collapsed;
                         break;
                     case "NavBut3":
                         mainFrame.Navigate(typeof(AjoutEmploye));
+                        Bt_Mod.Visibility = Visibility.Visible;
                         break;
                 }
             }
@@ -78,12 +87,15 @@ namespace ProjetFinal
                 {
                     case "NavBut1":
                         mainFrame.Navigate(typeof(AjoutProjet));
+                        Bt_Mod.Visibility = Visibility.Collapsed;
                         break;
                     case "NavBut2":
                         mainFrame.Navigate(typeof(AjoutClient));
+                        Bt_Mod.Visibility = Visibility.Collapsed;
                         break;
                     case "NavBut3":
                         mainFrame.Navigate(typeof(ModificationEmploye));
+                        Bt_Mod.Visibility = Visibility.Visible;
                         break;
                 }
             }

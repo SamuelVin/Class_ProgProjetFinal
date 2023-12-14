@@ -14,12 +14,6 @@
 
     <ScrollViewer>
         <Grid  Background="#262626" >
-
-        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
-        </StackPanel>
-
             <Grid Padding="40" x:Name="mainGrid" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />

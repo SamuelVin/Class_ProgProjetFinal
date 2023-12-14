@@ -9,6 +9,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid Background="#262626">
         <GridView x:Name="lv_Affichage">
             <GridView.ItemTemplate>
@@ -57,4 +58,5 @@
             </GridView.ItemTemplate>
         </GridView>
     </Grid>
+    </ScrollViewer>
 </Page>
