@@ -25,7 +25,7 @@ namespace ProjetFinal
     {
         public MainWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             mainFrame.Navigate(typeof(Page_Projet));
         }
 
@@ -44,6 +44,52 @@ namespace ProjetFinal
                 case "NavBut3":
                     mainFrame.Navigate(typeof(Page_Employe));
                     break;
+            }
+        }
+
+        private void Bt_Add_Click(object sender, RoutedEventArgs e)
+        {
+            if (navView.SelectedItem is NavigationViewItem selectedItem)
+            {
+                switch (selectedItem.Name)
+                {
+                    case "NavBut1":
+                        mainFrame.Navigate(typeof(AjoutProjet));
+                        break;
+                    case "NavBut2":
+                        mainFrame.Navigate(typeof(AjoutClient));
+                        break;
+                    case "NavBut3":
+                        mainFrame.Navigate(typeof(AjoutEmploye));
+                        break;
+                }
+            }
+            else
+            {
+                // Handle the case where no item is selected
+            }
+        }
+
+        private void Bt_Mod_Click(object sender, RoutedEventArgs e)
+        {
+            if (navView.SelectedItem is NavigationViewItem selectedItem)
+            {
+                switch (selectedItem.Name)
+                {
+                    case "NavBut1":
+                        mainFrame.Navigate(typeof(AjoutProjet));
+                        break;
+                    case "NavBut2":
+                        mainFrame.Navigate(typeof(AjoutClient));
+                        break;
+                    case "NavBut3":
+                        mainFrame.Navigate(typeof(ModificationEmploye));
+                        break;
+                }
+            }
+            else
+            {
+                // Handle the case where no item is selected
             }
         }
     }

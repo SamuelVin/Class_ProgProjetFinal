@@ -9,6 +9,11 @@
     mc:Ignorable="d">
 
     <StackPanel>
+        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+            <Button x:Name="Bt_Add" Click="Bt_Add_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
+            <Button x:Name="Bt_Mod" Click="Bt_Mod_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
+        </StackPanel>
+
         <NavigationView PaneDisplayMode="Left" PaneTitle="Agance and Samuel company" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="#1a1a1a" IsBackButtonVisible="Visible" >
 
             <NavigationView.MenuItems>
@@ -20,19 +25,14 @@
                 <NavigationViewItem x:Name="NavBut3" Foreground="#f2f2f2" FontWeight="SemiBold" Content="Employés"  Icon="AddFriend"/>
 
                 <NavigationViewItemSeparator />
-                
+
 
             </NavigationView.MenuItems>
             <NavigationView.PaneFooter>
                 <NavigationViewItem Name="iDeconnexion" Content="Déconnexion" Icon="LeaveChat" />
             </NavigationView.PaneFooter>
-            
+
             <Frame x:Name="mainFrame" Grid.Row="1" Background="Aqua"/>
         </NavigationView>
-   
-
-</StackPanel>
-    
-    
-    
+    </StackPanel>
 </Window>

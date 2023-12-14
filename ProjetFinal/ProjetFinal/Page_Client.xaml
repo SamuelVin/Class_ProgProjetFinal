@@ -10,11 +10,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="#262626">
-        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
-        </StackPanel>
-
         <GridView x:Name="lv_Affichage">
             <GridView.ItemTemplate>
                 <DataTemplate>
