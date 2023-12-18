@@ -35,33 +35,33 @@
 
         <!--Ajout un Client-->
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
+            <StackPanel Grid.Row="1" Grid.Column="0" Padding="20">
                 <TextBox x:Name="tbxIdClient"  Header="id du client" VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurIdClient" Foreground="Red" FontSize="15" />
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Grid.Column="2" Padding="20">
+            <StackPanel Grid.Row="2" Grid.Column="0" Padding="20">
                 <TextBox x:Name="tbxNom"  Header="Nom du client"  VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurNom" Foreground="Red" FontSize="15" />
             </StackPanel>
 
-            <StackPanel Grid.Row="3" Grid.Column="3" Padding="20">
+            <StackPanel Grid.Row="3" Grid.Column="0" Padding="20">
                 <TextBox x:Name="tbxEmail"  Header="Email du client"  VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurEmail" Foreground="Red" FontSize="15" />
             </StackPanel>
 
-            <StackPanel Grid.Row="4" Grid.Column="4" Padding="20">
+            <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
                 <TextBox x:Name="tbxAdresse"  Header="Adresse du client"  VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurAdresse" Foreground="Red" FontSize="15" />
             </StackPanel>
 
-            <StackPanel Grid.Row="5" Grid.Column="5" Padding="20">
+            <StackPanel Grid.Row="2" Grid.Column="1" Padding="20">
                 <TextBox x:Name="tbxTelephone"  Header="Telephone du client"  VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurTelephone" Foreground="Red" FontSize="15" />
             </StackPanel>
 
 
-            <Button x:Name="btAjouter" Grid.Row="6" Grid.ColumnSpan="0" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btAjouter_Click">
+            <Button x:Name="btAjouter" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btAjouter_Click">
                 <TextBlock Foreground="DarkGreen">Ajouter le client</TextBlock>
             </Button>
 

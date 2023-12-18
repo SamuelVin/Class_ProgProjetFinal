@@ -35,56 +35,56 @@
 
                 <!--Ajout un projet-->
 
-                <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
+                <StackPanel Grid.Row="1" Grid.Column="0" Padding="20">
                     <TextBox x:Name="tbxNumeroProjet" Header="Numero  du projet " VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurNumeroProjet" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="2" Grid.Column="2" Padding="20">
+                <StackPanel Grid.Row="2" Grid.Column="0" Padding="20">
                     <TextBox x:Name="tbxTitre" Header="titre du projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurTitre" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="3" Grid.Column="3" Padding="20">
+                <StackPanel Grid.Row="3" Grid.Column="0" Padding="20">
                     <TextBox x:Name="tbxDateDebut" Header="Date du debut du projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurDateDebut" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
 
-                <StackPanel Grid.Row="4" Grid.Column="4" Padding="20">
+                <StackPanel Grid.Row="4" Grid.Column="0" Padding="20">
                     <TextBox x:Name="tbxDescription" Header="Description du projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurDescription" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
 
-                <StackPanel Grid.Row="5" Grid.Column="5" Padding="20">
+                <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
                     <TextBox x:Name="tbxBudget"  Header="Budget du projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurBudget" Foreground="Red" FontSize="15" />
                   </StackPanel>
 
 
-                <StackPanel Grid.Row="6" Grid.Column="6" Padding="20">
+                <StackPanel Grid.Row="2" Grid.Column="1" Padding="20">
                     <TextBox x:Name="tbxNbrEmploye"  Header="Nombre d'Employé sur un projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurNbrEmploye" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
 
-                <StackPanel Grid.Row="7" Grid.Column="7" Padding="20">
+                <StackPanel Grid.Row="3" Grid.Column="1" Padding="20">
                     <TextBox x:Name="tbxTotalSal"  Header="le salaire total payé pour un projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurTotalSal" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="8" Grid.Column="8" Padding="20">
+                <StackPanel Grid.Row="4" Grid.Column="1" Padding="20">
                     <TextBox x:Name="tbxClient"  Header="le Client du projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurClient" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="9" Grid.Column="9" Padding="20">
+                <StackPanel Grid.Row="5" Grid.Column="1" Padding="20">
                     <TextBox x:Name="tbxStatut"  Header="le Statut du projet" VerticalAlignment="Top"/>
                     <TextBlock x:Name="tblErreurStatut" Foreground="Red" FontSize="15" />
                 </StackPanel>
 
-                <Button x:Name="btAjouter" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btAjouter_Click">
+                <Button x:Name="btAjouter" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btAjouter_Click">
                     <TextBlock Foreground="DarkGreen">Ajouter le projet</TextBlock>
                 </Button>
 
