@@ -104,5 +104,13 @@ namespace ProjetFinal
                 // Handle the case where no item is selected
             }
         }
+
+        private void bt_User_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if(IsConnected==true)
+            {
+                bt_User.Content = "Déconnexion";
+            }
+        }
     }
 }

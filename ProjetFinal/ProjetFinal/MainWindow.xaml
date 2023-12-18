@@ -28,7 +28,7 @@
                 
             </NavigationView.MenuItems>
             <NavigationView.PaneFooter>
-                <NavigationViewItem Name="bt_User" Content="Connexion" Icon="LeaveChat" />
+                <NavigationViewItem Name="bt_User" Content="Connexion" Icon="LeaveChat" Tapped="bt_User_Tapped"/>
             </NavigationView.PaneFooter>
 
             <Frame x:Name="mainFrame" Grid.Row="1" Background="#1a1a1a"/>
