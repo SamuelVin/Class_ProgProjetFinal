@@ -10,7 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="#262626">
-        <GridView x:Name="lv_Affichage">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto" >
+            <GridView x:Name="lv_Affichage">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
@@ -60,5 +61,6 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
+        </ScrollViewer>
     </Grid>
 </Page>

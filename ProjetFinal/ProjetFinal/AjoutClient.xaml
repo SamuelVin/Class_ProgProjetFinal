@@ -21,7 +21,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
+              
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock Text="Ajout d'un article" Margin="15" FontSize="40" FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <TextBlock Text="Ajout d'un client" Margin="15" FontSize="40" FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold" HorizontalAlignment="Center"/>
 
 
         <!--Ajout un Client-->
