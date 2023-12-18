@@ -9,14 +9,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+
     <Grid Background="#262626">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto" >
 
-
-                <GridView x:Name="lv_Affichage">
+        <GridView x:Name="lv_Affichage">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="650">
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="350">
                         <StackPanel Margin="10" Background="#f2f2f2">
                             <Grid>
                                 <TextBlock FontWeight="Bold" FontSize="18" Margin="65,0,0,0" Foreground="Black" Text="{Binding NumeroProjet}"></TextBlock>
@@ -59,7 +59,7 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        </ScrollViewer>
+
     </Grid>
-    
+
 </Page>

@@ -7,14 +7,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Grid>
 
-    <StackPanel>
-        <StackPanel VerticalAlignment="Top"  Background="#1e1e1e">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            
+        </Grid.RowDefinitions>
+      
+        <StackPanel Background="#1e1e1e"  Grid.Row="0">
             <Button x:Name="Bt_Add" Click="Bt_Add_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Ajouter</Button>
             <Button x:Name="Bt_Mod" Click="Bt_Mod_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30px" Width="100px" Margin="5">Modifier</Button>
         </StackPanel>
 
-        <NavigationView PaneDisplayMode="Left" PaneTitle="Agance and Samuel company" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="#1a1a1a" IsBackButtonVisible="Visible" >
+        <NavigationView Grid.Row="1" PaneDisplayMode="Left" PaneTitle="Agance and Samuel company" x:Name="navView" SelectionChanged="navView_SelectionChanged" Background="#1a1a1a" IsBackButtonVisible="Visible" >
 
             <NavigationView.MenuItems>
                 <AutoSuggestBox Width="200"  PlaceholderText="Rechercher" QueryIcon="Find"></AutoSuggestBox>
@@ -34,7 +41,8 @@
             <Frame x:Name="mainFrame" Grid.Row="1" Background="#1a1a1a"/>
 
         </NavigationView>
-    </StackPanel>
+    
+    </Grid>
 </Window>
 
     

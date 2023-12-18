@@ -26,7 +26,7 @@ namespace ProjetFinal
         public MainWindow()
         {
             InitializeComponent();
-            mainFrame.Navigate(typeof(Page_Client));
+            mainFrame.Navigate(typeof(Page_Projet));
             Bt_Mod.Visibility = Visibility.Collapsed;
         }
 

@@ -27,6 +27,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+              
             </Grid.ColumnDefinitions>
 
 
@@ -34,17 +35,17 @@
 
             <!-- Modification Employe -->
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Padding="20">
+            <StackPanel Grid.Row="1" Grid.Column="0" Padding="20">
                 <TextBox x:Name="tbxMatricule"  Header="Matricule de l'employé" VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurMatricule" Foreground="Red" FontSize="15" />
             </StackPanel>
 
-            <StackPanel Grid.Row="4" Grid.Column="4" Padding="20">
+            <StackPanel Grid.Row="2" Grid.Column="0" Padding="20">
                 <TextBox x:Name="tbxDateNaissance"  Header="Date de naissance de l'employé" VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurDateNaissance" Foreground="Red" FontSize="15" />
             </StackPanel>
 
-            <StackPanel Grid.Row="7" Grid.Column="7" Padding="20">
+            <StackPanel Grid.Row="2" Grid.Column="1" Padding="20">
                 <TextBox x:Name="tbxDateEmbauche"  Header="la date d'embauche de l'employé" VerticalAlignment="Top"/>
                 <TextBlock x:Name="tblErreurDateEmbauche" Foreground="Red" FontSize="15" />
             </StackPanel>
