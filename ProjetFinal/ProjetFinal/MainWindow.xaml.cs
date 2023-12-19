@@ -30,12 +30,11 @@ namespace ProjetFinal
             Bt_Mod.Visibility = Visibility.Collapsed;
         }
 
-        Boolean IsConnected = false;
-
         private void navView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             var item = (NavigationViewItem)args.SelectedItem;
 
+            Bt_Add.Visibility = Visibility.Visible;
             switch (item.Name)
             {
                 case "NavBut1":
@@ -57,25 +56,29 @@ namespace ProjetFinal
         {
             if (navView.SelectedItem is NavigationViewItem selectedItem)
             {
-                switch (selectedItem.Name)
+                if (SingletonUtilisateur.getInstance().IsConnect() == true)
                 {
-                    case "NavBut1":
-                        mainFrame.Navigate(typeof(AjoutProjet));
-                        Bt_Mod.Visibility = Visibility.Collapsed;
-                        break;
-                    case "NavBut2":
-                        mainFrame.Navigate(typeof(AjoutClient));
-                        Bt_Mod.Visibility = Visibility.Collapsed;
-                        break;
-                    case "NavBut3":
-                        mainFrame.Navigate(typeof(AjoutEmploye));
-                        Bt_Mod.Visibility = Visibility.Visible;
-                        break;
+                    Bt_Add.Visibility = Visibility.Visible;
+                    switch (selectedItem.Name)
+                    {
+                        case "NavBut1":
+                            mainFrame.Navigate(typeof(AjoutProjet));
+                            Bt_Mod.Visibility = Visibility.Collapsed;
+                            break;
+                        case "NavBut2":
+                            mainFrame.Navigate(typeof(AjoutClient));
+                            Bt_Mod.Visibility = Visibility.Collapsed;
+                            break;
+                        case "NavBut3":
+                            mainFrame.Navigate(typeof(AjoutEmploye));
+                            Bt_Mod.Visibility = Visibility.Visible;
+                            break;
+                    }
                 }
             }
             else
             {
-                // Handle the case where no item is selected
+                mainFrame.Navigate(typeof(AjoutProjet));
             }
         }
 
@@ -83,20 +86,24 @@ namespace ProjetFinal
         {
             if (navView.SelectedItem is NavigationViewItem selectedItem)
             {
-                switch (selectedItem.Name)
+                if (SingletonUtilisateur.getInstance().IsConnect() == true)
                 {
-                    case "NavBut1":
-                        mainFrame.Navigate(typeof(AjoutProjet));
-                        Bt_Mod.Visibility = Visibility.Collapsed;
-                        break;
-                    case "NavBut2":
-                        mainFrame.Navigate(typeof(AjoutClient));
-                        Bt_Mod.Visibility = Visibility.Collapsed;
-                        break;
-                    case "NavBut3":
-                        mainFrame.Navigate(typeof(ModificationEmploye));
-                        Bt_Mod.Visibility = Visibility.Visible;
-                        break;
+                    Bt_Add.Visibility = Visibility.Visible;
+                    switch (selectedItem.Name)
+                    {
+                        case "NavBut1":
+                            mainFrame.Navigate(typeof(AjoutProjet));
+                            Bt_Mod.Visibility = Visibility.Collapsed;
+                            break;
+                        case "NavBut2":
+                            mainFrame.Navigate(typeof(AjoutClient));
+                            Bt_Mod.Visibility = Visibility.Collapsed;
+                            break;
+                        case "NavBut3":
+                            mainFrame.Navigate(typeof(ModificationEmploye));
+                            Bt_Mod.Visibility = Visibility.Visible;
+                            break;
+                    }
                 }
             }
             else
@@ -107,10 +114,9 @@ namespace ProjetFinal
 
         private void bt_User_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if(IsConnected==true)
-            {
-                bt_User.Content = "Déconnexion";
-            }
+            mainFrame.Navigate(typeof(Page_Connexion));
+            Bt_Add.Visibility = Visibility.Collapsed;
+            Bt_Mod.Visibility = Visibility.Collapsed;
         }
     }
 }

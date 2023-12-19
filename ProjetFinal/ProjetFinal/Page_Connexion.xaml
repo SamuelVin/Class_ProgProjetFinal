@@ -9,7 +9,55 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        
-    </Grid>
+    <ScrollViewer>
+        <Grid  Background="#262626" >
+            <Grid Padding="40" x:Name="mainGrid" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Connexion" Margin="15" FontSize="40"  FontFamily="Terminal" Grid.ColumnSpan="2" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+
+
+                <!--Ajout un projet-->
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Padding="20">
+                    <TextBox x:Name="tbxUsername" Header="Nom d'utilisateur" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurUsername" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Padding="20">
+                    <PasswordBox x:Name="tbxPassword" Header="Mots de passe" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="tblErreurPassword" Foreground="Red" FontSize="15" />
+                </StackPanel>
+
+                <Button x:Name="btConnecter" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20" Background="LightGray" Click="btConnecter_Click">
+                    <TextBlock Foreground="DarkGreen">Se connecter</TextBlock>
+                </Button>
+
+                <Button x:Name="btDeconnecter" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontSize="20" Background="LightGray" Click="btDeconnecter_Click">
+                    <TextBlock Foreground="DarkRed">Déconnexion</TextBlock>
+                </Button>
+
+                <Button x:Name="btAcces" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontSize="20" Background="LightGray" Click="btAcces_Click">
+                    <TextBlock Foreground="RoyalBlue">Accès Rapide</TextBlock>
+                </Button>
+
+
+            </Grid>
+
+        </Grid>
+
+    </ScrollViewer>
 </Page>

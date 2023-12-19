@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace ProjetFinal
         static SingletonUtilisateur instance = null;
         MySqlConnection con;
         ObservableCollection<Utilisateur> listeUtilisateur;
+
+        Boolean IsConnected = false;
 
         public SingletonUtilisateur()
         {
@@ -32,18 +35,24 @@ namespace ProjetFinal
             return instance;
         }
 
-        public bool ReturnConnected(string Utilisateur, string Password)
+        public void ChangeConnect(Boolean newBool)
+        {
+            IsConnected = newBool;
+        }
+        public bool IsConnect()
+        { 
+            return IsConnected; 
+        }
+        public void UserConnect(string utilisateur, string password)
         {
             try
             {
-                MySqlCommand commande = new MySqlCommand();
+                MySqlCommand commande = new MySqlCommand("UtilisateurConnect");
                 commande.Connection = con;
-                commande.CommandText = "UtilisateurConnect";
-                commande.CommandType = CommandType.StoredProcedure;
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // Add parameters to the stored procedure
-                commande.Parameters.AddWithValue("@pUsername", Utilisateur);
-                commande.Parameters.AddWithValue("@pPassword", Password);
+                commande.Parameters.AddWithValue("@pUsername", utilisateur);
+                commande.Parameters.AddWithValue("@pPassword", password);
 
                 con.Open();
 
@@ -55,20 +64,30 @@ namespace ProjetFinal
                 // Check the result of the stored procedure
                 if (result != null && result is bool)
                 {
-                    return (bool)result;
+                    IsConnected = (bool)result;
                 }
                 else
                 {
-                    // Handle the case where the result is not as expected
-                    // You may want to log an error or throw an exception
-                    return false;
+                    // Handle the case where the result is unexpected or null
+                    IsConnected = false;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                IsConnected = false;
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
                 }
             }
             catch (Exception ex)
             {
-                // Handle exceptions
-                // You may want to log an error or throw an exception
-                return false;
+                IsConnected = false;
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close();
+                }
             }
         }
 

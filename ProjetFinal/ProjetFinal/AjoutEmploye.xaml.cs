@@ -137,6 +137,7 @@ namespace ProjetFinal
 
                 ContentDialogResult resultat = await dialog.ShowAsync();
 
+                this.Frame.Navigate(typeof(Page_Projet));
             }
 
         }

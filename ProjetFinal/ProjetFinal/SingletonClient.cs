@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,18 +76,17 @@ namespace ProjetFinal
             {
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
-                /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
                 commande.CommandText = "AddClient";
+                commande.CommandType = CommandType.StoredProcedure;
 
-                //commande.Parameters.AddWithValue("@id", id);
-                commande.Parameters.AddWithValue("@idClient", idClient);
-                commande.Parameters.AddWithValue("@nom", nom);
-                commande.Parameters.AddWithValue("@email", email);
-                commande.Parameters.AddWithValue("@adresse", adresse);
-                commande.Parameters.AddWithValue("@telephone", telephone);
-
+                commande.Parameters.AddWithValue("@pId", idClient);
+                commande.Parameters.AddWithValue("@pNom", nom);
+                commande.Parameters.AddWithValue("@pEmail", email);
+                commande.Parameters.AddWithValue("@pAdresse", adresse);
+                commande.Parameters.AddWithValue("@pTelephone", telephone);
 
                 con.Open();
+
                 commande.Prepare();
                 int i = commande.ExecuteNonQuery();
 
