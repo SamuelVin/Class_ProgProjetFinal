@@ -118,5 +118,10 @@ namespace ProjetFinal
             Bt_Add.Visibility = Visibility.Collapsed;
             Bt_Mod.Visibility = Visibility.Collapsed;
         }
+
+        private void bt_Export_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }

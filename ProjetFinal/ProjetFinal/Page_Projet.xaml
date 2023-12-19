@@ -12,7 +12,7 @@
 
 
     <Grid Background="#262626">
-
+        
         <GridView x:Name="lv_Affichage">
             <GridView.ItemTemplate>
                 <DataTemplate>

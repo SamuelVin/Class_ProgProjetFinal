@@ -147,13 +147,5 @@ namespace ProjetFinal
             tblErreurClient.Text = string.Empty;
             tblErreurStatut.Text = string.Empty;
         }
-
-
-
     }
-
-
-
-
 }
-    
