@@ -85,6 +85,7 @@ namespace ProjetFinal
                 valide = false;
             }
 
+            string txt=tbxTauxHoraire.Text;
 
             if (ValidationEmploye.getInstance().isTauxHoraireValide(tbxTauxHoraire.Text) == false)
             {
@@ -121,12 +122,12 @@ namespace ProjetFinal
                     Email = tbxEmail.Text,
                     Adresse = tbxAdresse.Text,
                     DateEmbauche = tbxDateEmbauche.Text,
-                    TauxHoraire =double.Parse(tbxDateEmbauche.Text),
+                    TauxHoraire =double.Parse(tbxTauxHoraire.Text),
                     Photo = tbxPhoto.Text,
                     Statut = tbxStatut.Text,
                 };
 
-                SingletonEmploye.getInstance().AddEmploye(tbxMatricule.Text, tbxNom.Text, tbxPrenom.Text, tbxDateNaissance.Text, tbxEmail.Text, tbxAdresse.Text, tbxDateEmbauche.Text, double.Parse(tbxDateEmbauche.Text), tbxPhoto.Text, tbxStatut.Text);
+                SingletonEmploye.getInstance().AddEmploye(tbxMatricule.Text, tbxNom.Text, tbxPrenom.Text, tbxDateNaissance.Text, tbxEmail.Text, tbxAdresse.Text, tbxDateEmbauche.Text, double.Parse(tbxTauxHoraire.Text), tbxPhoto.Text, tbxStatut.Text);
 
                 ContentDialog dialog = new ContentDialog();
                 dialog.XamlRoot = mainGrid.XamlRoot;
@@ -149,7 +150,7 @@ namespace ProjetFinal
             tblErreurEmail.Text = string.Empty;
             tblErreurAdresse.Text = string.Empty;
             tblErreurDateEmbauche.Text = string.Empty;
-            tbxTauxHoraire.Text = string.Empty;
+            tblErreurTauxHoraire.Text = string.Empty;
             tblErreurPhoto.Text = string.Empty;
             tblErreurStatut.Text = string.Empty;
         }
