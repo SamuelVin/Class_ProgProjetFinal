@@ -77,12 +77,9 @@ namespace ProjetFinal
         {
             try
             {
-                MySqlCommand commande = new MySqlCommand();
+                MySqlCommand commande = new MySqlCommand("AddProjet");
                 commande.Connection = con;
-                commande.CommandText = "AddProjet";
-
-                con.Open();
-                MySqlDataReader r = commande.ExecuteReader();
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
 
                 commande.Parameters.AddWithValue("@pnumeroProjet", numeroProjet);
                 commande.Parameters.AddWithValue("@ptitre", titre);
@@ -94,7 +91,11 @@ namespace ProjetFinal
                 commande.Parameters.AddWithValue("@pclient", client);
                 commande.Parameters.AddWithValue("@pstatut", statut);
 
-                r.Close();
+                con.Open();
+                
+                commande.Prepare();
+                int i = commande.ExecuteNonQuery();
+
                 con.Close();
             }
             catch (Exception ex)

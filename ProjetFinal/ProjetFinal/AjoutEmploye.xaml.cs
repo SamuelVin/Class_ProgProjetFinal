@@ -121,7 +121,7 @@ namespace ProjetFinal
                     Email = tbxEmail.Text,
                     Adresse = tbxAdresse.Text,
                     DateEmbauche = tbxDateEmbauche.Text,
-                    TauxHoraire =double.Parse( tbxDateEmbauche.Text),
+                    TauxHoraire =double.Parse(tbxDateEmbauche.Text),
                     Photo = tbxPhoto.Text,
                     Statut = tbxStatut.Text,
                 };

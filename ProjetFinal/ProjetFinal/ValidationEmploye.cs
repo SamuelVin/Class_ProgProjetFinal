@@ -72,13 +72,23 @@ namespace ProjetFinal
             else
                 return false;
         }
-        public bool isTauxHoraireValide(string tauxHoraire)
+        public bool isTauxHoraireValide(string index)
         {
-            if (!string.IsNullOrEmpty(tauxHoraire.Trim()))
-                return true;
-            else
+            try
+            {
+
+                double nbr2 = Convert.ToDouble(index);
+                if (nbr2 >= 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
                 return false;
+            }
         }
+
         public bool isPhotoValide(string photo)
         {
             if (!string.IsNullOrEmpty(photo.Trim()))

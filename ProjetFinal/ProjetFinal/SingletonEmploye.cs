@@ -83,9 +83,6 @@ namespace ProjetFinal
                 command.CommandText = "AddEmploye";
                 command.CommandType = CommandType.StoredProcedure;
 
-                con.Open();
-                command.ExecuteNonQuery();
-
                 command.Parameters.AddWithValue("@pmatricule", matricule);
                 command.Parameters.AddWithValue("@pnom", nom);
                 command.Parameters.AddWithValue("@pprenom", prenom);
@@ -96,14 +93,18 @@ namespace ProjetFinal
                 command.Parameters.AddWithValue("@ptauxHoraire", tauxHoraire);
                 command.Parameters.AddWithValue("@pphoto", photo);
                 command.Parameters.AddWithValue("@pstatut", statut);
+
+                con.Open();
+
+                command.Prepare();
+                int i = command.ExecuteNonQuery();
+
+                con.Close();
+
             }
             catch (Exception ex)
             {
-                // Handle exception
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
+                if (con.State == System.Data.ConnectionState.Open)
                 {
                     con.Close();
                 }

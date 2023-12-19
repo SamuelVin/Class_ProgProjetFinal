@@ -39,20 +39,20 @@ namespace ProjetFinal
 
             if (ValidationProjet.getInstance().isNumeroProjetValide(tbxNumeroProjet.Text) == false)
             {
-                tblErreurNumeroProjet.Text = "Veuillez entrer le numero  du projet";
+                tblErreurNumeroProjet.Text = "Veuillez entrer le numero du projet";
                 valide = false;
             }
 
 
             if (ValidationProjet.getInstance().isTitreValide(tbxTitre.Text) == false)
             {
-                tblErreurTitre.Text = "Veuillez entrer le titre  du projet";
+                tblErreurTitre.Text = "Veuillez entrer le titre du projet";
                 valide = false;
             }
 
             if (ValidationProjet.getInstance().isDateDebutValide(tbxDateDebut.Text) == false)
             {
-                tblErreurDateDebut.Text = "Veuillez entrer la date de debut  du projet";
+                tblErreurDateDebut.Text = "Veuillez entrer la date de debut du projet";
                 valide = false;
             }
 
@@ -60,7 +60,7 @@ namespace ProjetFinal
 
             if (ValidationProjet.getInstance().isDescriptionValide(tbxDescription.Text) == false)
             {
-                tblErreurDescription.Text = "Veuillez entrer le numero  du projet";
+                tblErreurDescription.Text = "Veuillez entrer le numero du projet";
                 valide = false;
             }
 
