@@ -77,8 +77,8 @@ namespace ProjetFinal
         {
             try
             {
-                //double nbr2 = Convert.ToDouble(index);
-                double nbr2 = double.Parse(index);
+                double nbr2 = Convert.ToDouble(index);
+               
                 if (nbr2 >= 0)
                     return true;
                 else
