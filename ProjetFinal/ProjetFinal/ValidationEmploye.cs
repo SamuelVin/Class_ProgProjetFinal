@@ -72,12 +72,13 @@ namespace ProjetFinal
             else
                 return false;
         }
+
         public bool isTauxHoraireValide(string index)
         {
             try
             {
-
-                double nbr2 = Convert.ToDouble(index);
+                //double nbr2 = Convert.ToDouble(index);
+                double nbr2 = double.Parse(index);
                 if (nbr2 >= 0)
                     return true;
                 else

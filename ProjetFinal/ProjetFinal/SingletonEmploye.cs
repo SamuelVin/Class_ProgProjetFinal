@@ -115,20 +115,18 @@ namespace ProjetFinal
         {
             try
             {
-                MySqlCommand command = new MySqlCommand();
+                MySqlCommand command = new MySqlCommand("UpdateEmploye");
                 command.Connection = con;
-                command.CommandText = "UpdateEmploye";
                 command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@pmatricule", matricule);
+                command.Parameters.AddWithValue("@pdateNaissance", dateNaissance); 
+                command.Parameters.AddWithValue("@pdateEmbauche", dateEmbauche);
 
                 con.Open();
                 command.ExecuteNonQuery();
 
-                command.Parameters.AddWithValue("@pmatricule", matricule);
-                
-                command.Parameters.AddWithValue("@pdateNaissance", dateNaissance);
-                
-                command.Parameters.AddWithValue("@pdateEmbauche", dateEmbauche);
-                
+                con.Close();
             }
             catch (Exception ex)
             {

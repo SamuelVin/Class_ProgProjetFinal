@@ -62,9 +62,6 @@ namespace ProjetFinal
                     Matricule = tbxMatricule.Text,
                     DateNaissance = tbxDateNaissance.Text,
                     DateEmbauche = tbxDateEmbauche.Text,
-                   
-                  
-                    
                 };
 
                 SingletonEmploye.getInstance().UpdateEmploye(tbxMatricule.Text,tbxDateNaissance.Text, tbxDateEmbauche.Text);
